@@ -156,6 +156,19 @@ header label{
     margin-right: 200px;
 }
 
+.features hr{
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    margin-right: 480px;
+    margin-left: 480px;
+    color: black;
+    border-style:solid;
+    border-width: 2px;
+    
+
+}
+
 .features p{
     text-align: center;
     color:#666;
@@ -201,8 +214,27 @@ header label{
     padding: 1rem 0;
 }
 
+.btn_pelajari {
+    display: inline-block;
+    margin-top: 1rem;
+    padding:.8rem 3rem;
+    border-radius: 5rem;
+    background: white;
+    font-size: 1.7rem;
+    color:#458FF6;
+    cursor: pointer;
+    border: 2px solid #458FF6;
+    transition: all .3s linear;
+    margin-left: 400px;
+    
+}
+.btn_pelajari:hover {
+    background-color: #458FF6;
+    color: white;
+}
+
 .about{
-    background:url(about-bg.png) no-repeat;
+    
     background-size: cover;
     background-position: center;
     padding-bottom: 3rem;
@@ -225,17 +257,54 @@ header label{
 
 .about .column .content{
     flex:1 1 40rem;
+   
 }
 
 .about .column .content h3{
     font-size: 3rem;
-    color:#666;
+    color:black;
 }
+
+.about .column .content h3 span{
+    color: #0251BB;
+    
+}
+
+.about .column .content hr {
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-right: 470px;
+    color: black;
+    border-style:solid;
+    border-width: 2px;
+    }
 
 .about .column .content p{
     font-size: 1.5rem;
     color:#666;
     padding:1rem 0;
+    margin-right: 200px;
+}
+
+.about .column .content .buttons {
+    display: inline-block;
+    margin-top: 2rem;
+    padding:.7rem 2rem;
+    border-radius: 5rem;
+    background: white;
+    font-size: 1.7rem;
+    color:#fff;
+    cursor: pointer;
+    border: 2px solid #458FF6;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
+
+}
+.about .column .content .buttons:hover{
+    background-color: #458FF6;
+    color: white;
+    transform: scale(1.1);
 }
 
 .about .column .content .buttons a:last-child{

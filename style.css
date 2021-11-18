@@ -369,11 +369,24 @@ header label{
     color:var(--pink);
 }
 
+.review{
+    background: url(testimonials-bg.png) no-repeat;
+    background-position: center;
+    background-position-y: 165px;
+}
+.review .heading{
+   padding: 4rem;
+   color: black;
+
+}
+
+
 .review .box-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
+   
 }
 
 .review .box-container .box{
@@ -392,7 +405,7 @@ header label{
     position: absolute;
     top:1rem; right:2rem;
     font-size: 8rem;
-    color:var(--pink);
+    color:#458FF6;
     opacity: .3;
 }
 
@@ -405,12 +418,12 @@ header label{
 }
 
 .review .box-container .box .user h3{
-    color:var(--pink);
+    color:#0251BB;
     font-size: 2rem;
 }
 
 .review .box-container .box .user .stars i{
-    color:var(--purple);
+    color:yellow;
     font-size: 1.5rem;
     padding:1rem 0;
 }
@@ -550,9 +563,9 @@ header label{
 }
 
 .footer{
-    padding-top: 3rem;
+    padding-top: 2rem;
     background:url(footer-bg.png) no-repeat;
-    background-size: cover;
+    background-size: 1270px;
     background-position: center;
 }
 
@@ -610,12 +623,12 @@ header label{
 }
 
 .footer .credit{
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: normal;
     letter-spacing: .1rem;
     color:#fff;
     border-top: .1rem solid #fff5;
-    padding:2.5rem 1rem;
+    padding:1rem 1rem;
     text-align: center;
 }
 

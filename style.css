@@ -17,7 +17,7 @@
 
 *::selection{
     background:var(--pink);
-    color:#fff;
+    color:white;
 }
 
 html{
@@ -26,7 +26,7 @@ html{
 }
 
 body{
-    background:#f9f9f9;
+    background:white;
 }
 
 
@@ -234,9 +234,11 @@ header label{
 }
 
 .about{
+    background:url(home-bg.png) no-repeat;
+    background-size: 900px;
+    background-position-x: 400px;
+    background-position-y: -25px;
     
-    background-size: cover;
-    background-position: center;
     padding-bottom: 3rem;
 }
 
@@ -249,14 +251,17 @@ header label{
 
 .about .column .image{
     flex:1 1 40rem;
+    margin-right: 80px;
 }
 
 .about .column .image img{
-    width:100%;
+    width:120%;
+    
 }
 
 .about .column .content{
     flex:1 1 40rem;
+    margin-left: 80px;
    
 }
 
@@ -274,7 +279,7 @@ header label{
     display: block;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-right: 470px;
+    margin-right: 400px;
     color: black;
     border-style:solid;
     border-width: 2px;
@@ -284,7 +289,7 @@ header label{
     font-size: 1.5rem;
     color:#666;
     padding:1rem 0;
-    margin-right: 200px;
+    margin-right: 170px;
 }
 
 .about .column .content .buttons {

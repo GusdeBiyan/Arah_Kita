@@ -504,6 +504,8 @@ header label{
     justify-content: center;
     flex-wrap: wrap;
     padding-bottom: 4rem;
+    background-image: url(halaman-login.png);
+    background-size: cover;
 }
 
 .contact .image{
@@ -511,8 +513,8 @@ header label{
 }
 
 .contact .image img{
-    width:100%;
-    padding:2rem;
+    width:70%;
+    padding:3rem;
 }
 
 .contact form{
@@ -556,6 +558,27 @@ header label{
     font-size: 1.7rem;
     color:#666;
     transition: .2s linear;
+}
+
+.contact form .btn_login{
+    display: inline-block;
+    margin-top: 2rem;
+    padding:.7rem 2rem;
+    border-radius: 5rem;
+    background: white;
+    font-size: 1.7rem;
+    color:#458FF6;
+    cursor: pointer;
+    border: 2px solid #458FF6;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+    transition: all .3s linear;
+}
+
+.contact form .btn_login:hover{
+    background-color: #458FF6;
+    color: white;
+    transform: scale(1.0);
+
 }
 
 .contact form .inputBox input:focus ~ label,

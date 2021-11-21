@@ -5,6 +5,10 @@
     --pink:#F83292;
     --gradient:linear-gradient(90deg, var(--purple), var(--pink));
 }
+.heading{
+font-size: 30px;
+
+}
 
 *{
     font-family: 'Poppins', sans-serif;

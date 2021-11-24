@@ -7,8 +7,9 @@ if (isset($_SESSION["login"]) === false) {
     exit;
 }
 
+// tampilkan data
 require "functions.php";
-$mahasiswa = query("SELECT * FROM wisata");
+$mahasiswa = tampil("SELECT * FROM wisata");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {

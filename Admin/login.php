@@ -98,7 +98,7 @@ if (isset($_POST["login"])) {
                 <label>Password</label>
             </div>
     
-            <button type="submit" class="btn_login">Login</button>
+            <button type="submit" name="login" class="btn_login">Login</button>
     
         </form>
     

@@ -88,11 +88,12 @@ if (isset($_POST["login"])) {
     
         <form action="" method="POST">
 
+            <h1 class="heading">Welcome to Arah Kita</h1>
+
             <?php if (isset($error)) : ?>
                 <i style="color: red;">Username atau password salah</i>
             <?php endif; ?>
 
-            <h1 class="heading">Welcome to Arah Kita</h1>
 
             <ul style="list-style: none;">
                  <div class="inputBox">

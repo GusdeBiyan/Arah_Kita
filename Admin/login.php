@@ -89,12 +89,12 @@ if (isset($_POST["login"])) {
             <h1 class="heading">Welcome to Arah Kita</h1>
     
             <div class="inputBox">
-                <input type="text" required>
+                <input type="text" name="username" id="username">
                 <label>Username</label>
             </div>
     
             <div class="inputBox">
-                <input type="password" required>
+                <input type="password" name="password" id="password">
                 <label>Password</label>
             </div>
     

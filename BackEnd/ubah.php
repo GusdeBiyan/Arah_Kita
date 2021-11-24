@@ -13,7 +13,7 @@ require "functions.php";
 $id = $_GET["id"];
 
 // query data wisata berdasarkan id
-$mhs = query("SELECT * FROM wisata WHERE id = $id")[0];
+$mhs = tampil("SELECT * FROM wisata WHERE id = $id")[0];
 
 // cek apakah tombol submit sudah ditekan
 if (isset($_POST["submit"])) {

@@ -9,11 +9,11 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$mahasiswa = tampil("SELECT * FROM wisata ORDER BY id DESC");
+$wisata = tampil("SELECT * FROM wisata ORDER BY id DESC");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {
-    $mahasiswa = cari($_POST["keyword"]);
+    $wisata = cari($_POST["keyword"]);
 }
 
 ?>
@@ -54,7 +54,7 @@ if (isset($_POST["cari"])) {
         </tr>
 
         <?php $i = 1; ?>
-        <?php foreach ($mahasiswa as $row) : ?>
+        <?php foreach ($wisata as $row) : ?>
             <tr>
                 <td><?= $i ?></td>
                 <td><?= $row["nama"] ?></td>

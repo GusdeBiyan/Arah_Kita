@@ -157,11 +157,11 @@ function registrasi($data)
     // cek username yang sudah ada
     $result = mysqli_query($koneksi, "SELECT username FROM users WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
-        // echo "
-        // <script>
-        // alert('Username sudah digunakan');
-        // </script>
-        // ";
+        echo "
+        <script>
+        alert('Username sudah digunakan');
+        </script>
+        ";
         return false;
     }
 

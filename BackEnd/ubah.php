@@ -22,14 +22,14 @@ if (isset($_POST["submit"])) {
     if (ubah($_POST) > 0) {
         echo "
         <script>
-        alert('data berhasil diubah');
+        alert('Data berhasil diubah');
         document.location.href = 'index.php';
         </script>
         ";
     } else {
         echo "
         <script>
-        alert('data gagal diubah');
+        alert('Data gagal diubah');
         document.location.href = 'index.php';
         </script>
         ";

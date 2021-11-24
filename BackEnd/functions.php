@@ -113,7 +113,7 @@ function ubah($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
-    // cek apakah users pilih gamabr baru
+    // cek apakah users pilih gambar baru
     if ($_FILES["gambar"]["error"] === 4) {
         $gambar = $gambarLama;
     } else {
@@ -157,11 +157,11 @@ function registrasi($data)
     // cek username yang sudah ada
     $result = mysqli_query($koneksi, "SELECT username FROM users WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
-        echo "
-        <script>
-        alert('Username sudah digunakan');
-        </script>
-        ";
+        // echo "
+        // <script>
+        // alert('Username sudah digunakan');
+        // </script>
+        // ";
         return false;
     }
 

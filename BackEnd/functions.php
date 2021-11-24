@@ -8,8 +8,8 @@ $db = "project";
 
 $koneksi = mysqli_connect($server, $username, $password, $db);
 
-// fungsi query
-function query($query)
+// fungsi tampil
+function tampil($query)
 {
     global $koneksi;
     $result = mysqli_query($koneksi, $query);
@@ -113,7 +113,7 @@ function ubah($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
-    // cek apakah users pilih gamabr baru
+    // cek apakah users pilih gambar baru
     if ($_FILES["gambar"]["error"] === 4) {
         $gambar = $gambarLama;
     } else {
@@ -142,7 +142,7 @@ function cari($keyword)
     nama LIKE '%$keyword%' OR 
     lokasi LIKE '%$keyword%'";
 
-    return query($query);
+    return tampil($query);
 }
 
 // fungsi registrasi

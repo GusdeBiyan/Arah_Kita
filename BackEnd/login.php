@@ -70,37 +70,57 @@ if (isset($_POST["login"])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login</title>
+
+    <!-- font awesome cdn link  -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">    
+
 </head>
 
 <body>
-    <h1>Halaman login</h1>
+    <section class="contact">
+        
+        <div class="image">
+            <img src="arahkita-2.png" alt="">
+            </div>
+    
+        <form action="" method="POST">
 
-    <?php if (isset($error)) : ?>
-        <i style="color: red;">Username atau password salah</i>
-    <?php endif; ?>
+            <?php if (isset($error)) : ?>
+                <i style="color: red;">Username atau password salah</i>
+            <?php endif; ?>
 
-    <form action="" method="POST">
-        <ul style="list-style: none;">
-            <li>
-                <label for="username">Username :</label>
-                <input type="text" name="username" id="username"> <br><br>
-            </li>
-            <li>
-                <label for="password">Password :</label>
-                <input type="password" name="password" id="password"> <br><br>
-            </li>
-            <li>
-                <input type="checkbox" name="remember" id="remember">
-                <label for="remember">Ingat saya</label> <br><br>
-            </li>
-            <li>
-                <button type="submit" name="login">Masuk</button>
-            </li>
-            <li>
-                <p>Belum punya akun? <a href="registrasi.php">Daftar</a></p>
-            </li>
-        </ul>
-    </form>
+            <h1 class="heading">Welcome to Arah Kita</h1>
+
+            <ul style="list-style: none;">
+                 <div class="inputBox">
+                     <li>
+                        <input type="text" name="username" id="username" placeholder="Username"> <br><br>
+                     </li>
+                </div>    
+
+                <div class="inputBox">
+                    <li>
+                        <input type="password" name="password" id="password" placeholder="Password"> <br><br>
+                    </li>
+                </div>
+
+                <li>
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Ingat saya</label> <br><br>
+                </li>
+                <li>
+                    <button type="submit" name="login" class="btn_login">Masuk</button>
+                </li>
+                <li>
+                    <p>Belum punya akun? <a href="registrasi.php">Daftar</a></p>
+                </li>
+            </ul>
+        </form>
+
+    </section>
 </body>
 
 </html>

@@ -38,7 +38,7 @@ if (isset($_POST["cari"])) {
     <br> <br>
 
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="text" name="keyword" size="30" autofocus placeholder="masukan kata kunci" autocomplete="off">
+        <input type="text" name="keyword" size="30" autofocus placeholder="Masukan kata kunci" autocomplete="off">
         <button type="submit" name="cari">Cari</button>
         <br><br>
     </form>
@@ -63,7 +63,7 @@ if (isset($_POST["cari"])) {
                 <td>
                     <a href="ubah.php?id=<?= $row["id"] ?>">Ubah</a>
                     <a style="color: red;" href="hapus.php?id=<?= $row["id"] ?>" onclick="
-                    return confirm ('Anda yakin ingin dihapus?');">Hapus</a>
+                    return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
                 </td>
             </tr>
             <?php $i++; ?>

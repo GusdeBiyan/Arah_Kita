@@ -9,7 +9,7 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$mahasiswa = tampil("SELECT * FROM wisata");
+$mahasiswa = tampil("SELECT * FROM wisata ORDER BY id DESC");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {

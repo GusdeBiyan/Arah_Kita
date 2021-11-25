@@ -39,8 +39,14 @@ if (isset($_POST["cari"])) {
     <br> <br>
 
     <form action="" method="POST" enctype="multipart/form-data">
-        <input type="text" name="keyword" size="30" autofocus placeholder="Masukan kata kunci" autocomplete="off">
-        <button type="submit" name="cari">Cari</button>
+        <!-- <input type="text" name="keyword" size="30" autofocus placeholder="Masukan kata kunci" autocomplete="off"> -->
+        <div class="container">
+            <div class="input-group">
+                <input type="text" name="keyword" class="form-control" placeholder="Masukan kata kunci" autofocus autocomplete="off">
+                <button class="btn btn-outline-secondary" type="submit" name="cari">Cari</button>
+            </div>
+        </div>
+        <!-- <button type="submit" name="cari">Cari</button> -->
         <br><br>
     </form>
 

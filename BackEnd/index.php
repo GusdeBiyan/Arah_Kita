@@ -26,6 +26,7 @@ if (isset($_POST["cari"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>halaman admin</title>
 </head>
 
@@ -33,8 +34,8 @@ if (isset($_POST["cari"])) {
 
     <h1>Daftar Wisata</h1>
 
-    <a href="tambah.php">Tambahkan wisata</a> &emsp;
-    <a href="logout.php" style="color: red;">Logout</a>
+    <a class="btn btn-success btn-sm" href="tambah.php" role="button">Tambah Wisata</a> &emsp;
+    <a class="btn btn-danger btn-sm" href="logout.php" role="button">Keluar</a>
     <br> <br>
 
     <form action="" method="POST" enctype="multipart/form-data">
@@ -61,8 +62,8 @@ if (isset($_POST["cari"])) {
                 <td><?= $row["lokasi"] ?></td>
                 <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                 <td>
-                    <a href="ubah.php?id=<?= $row["id"] ?>">Ubah</a>
-                    <a style="color: red;" href="hapus.php?id=<?= $row["id"] ?>" onclick="
+                    <a class="btn btn-warning btn-sm" href="ubah.php?id= <?= $row['id'] ?>" role="button">Ubah</a> &emsp14;
+                    <a class="btn btn-danger btn-sm" href="ubah.php?id= <?= $row['id'] ?>" role="button" onclick="
                     return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
                 </td>
             </tr>

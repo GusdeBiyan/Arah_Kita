@@ -146,7 +146,7 @@ function cari($keyword)
     $query = "SELECT * FROM wisata 
     WHERE
     nama LIKE '%$keyword%' OR 
-    lokasi LIKE '%$keyword%'";
+    kategori LIKE '%$keyword%'";
 
     return tampil($query);
 }

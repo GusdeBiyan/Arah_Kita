@@ -46,9 +46,9 @@ if (isset($_POST["cari"])) {
     <table border="1" cellpadding="10" cellspacing="0">
 
         <tr>
-            <th>No.</th>
+            
             <th>Nama</th>
-            <th>Lokasi</th>
+            <th>Kategori</th>
             <th>Gambar</th>
             <th>Aksi</th>
         </tr>
@@ -56,9 +56,9 @@ if (isset($_POST["cari"])) {
         <?php $i = 1; ?>
         <?php foreach ($wisata as $row) : ?>
             <tr>
-                <td><?= $i ?></td>
+               
                 <td><?= $row["nama"] ?></td>
-                <td><?= $row["lokasi"] ?></td>
+                <td><?= $row["kategori"] ?></td>
                 <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                 <td>
                     <a href="ubah.php?id=<?= $row["id"] ?>">Ubah</a>

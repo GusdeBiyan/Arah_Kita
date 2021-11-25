@@ -61,6 +61,16 @@ if (isset($_POST["submit"])) {
             <br><br>
         </li>
         <li>
+            <label for="kategori">Kategori &emsp;&nbsp;:</label>
+            <input type="text" name="kategori" id="kategori" required value="<?= $wisata['kategori'] ?>">
+            <br><br>
+        </li>
+        <li>
+            <label for="deskripsi">Deskripsi &emsp;&nbsp;:</label>
+            <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wisata['deskripsi'] ?>">
+            <br><br>
+        </li>
+        <li>
             <label for="lokasi">Lokasi &emsp;:</label>
             <input type="lokasi" name="lokasi" id="lokasi" required value="<?= $wisata['lokasi'] ?>">
             <br><br>

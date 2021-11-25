@@ -83,7 +83,7 @@ if (isset($_POST["login"])) {
     <section class="contact">
         
         <div class="image">
-            <img src="arahkita-2.png" alt="">
+            <img src="bg/arahkita-2.png" alt="">
             </div>
     
         <form action="" method="POST">

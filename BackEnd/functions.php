@@ -27,6 +27,8 @@ function tambah($data)
     // ambil data dari tiap elemen dalam form
     // htmlspecialchars() supaya tidak disusupi script
     $nama = htmlspecialchars($data["nama"]);
+    $kategori = htmlspecialchars($data["kategori"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
 
     // upload gambar
@@ -37,7 +39,7 @@ function tambah($data)
 
     // query
     $query = "INSERT INTO wisata VALUES
-     ('', '$nama', '$lokasi', '$gambar')";
+     ('', '$nama','$kategori','$deskripsi','$lokasi', '$gambar')";
 
     mysqli_query($koneksi, $query);
 
@@ -111,6 +113,8 @@ function ubah($data)
     $id = $data["id"];
     $nama = htmlspecialchars($data["nama"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
+    $kategori = htmlspecialchars($data["kategori"]);
+    $deskripsi = htmlspecialchars($data["deskripsi"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     // cek apakah users pilih gambar baru
@@ -125,6 +129,8 @@ function ubah($data)
     $query = "UPDATE wisata SET
         nama = '$nama',
         lokasi = '$lokasi',
+        kategori = '$kategori' ,
+        deskripsi = '$deskripsi',
         gambar = '$gambar'
             WHERE id = $id
         ";

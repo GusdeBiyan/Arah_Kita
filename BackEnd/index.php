@@ -44,32 +44,39 @@ if (isset($_POST["cari"])) {
         <br><br>
     </form>
 
-    <table border="1" cellpadding="10" cellspacing="0">
-
-        <tr>
-            
-            <th>Nama</th>
-            <th>Kategori</th>
-            <th>Gambar</th>
-            <th>Aksi</th>
-        </tr>
-
-        <?php $i = 1; ?>
-        <?php foreach ($wisata as $row) : ?>
-            <tr>
-               
-                <td><?= $row["nama"] ?></td>
-                <td><?= $row["kategori"] ?></td>
-                <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
-                <td>
-                    <a class="btn btn-warning btn-sm" href="ubah.php?id= <?= $row['id'] ?>" role="button">Ubah</a> &emsp14;
-                    <a class="btn btn-danger btn-sm" href="hapus.php?id= <?= $row['id'] ?>" role="button" onclick="
-                    return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
-                </td>
-            </tr>
-            <?php $i++; ?>
-        <?php endforeach; ?>
-    </table>
+    <!-- awal tabel -->
+    <div class=" container-md">
+        <div class="card">
+            <div class="card-header bg-info text white">
+                Daftar Wisata
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Gambar</th>
+                        <th>Aksi</th>
+                    </tr>
+                    <?php $i = 1; ?>
+                    <?php foreach ($wisata as $row) : ?>
+                        <tr>
+                            <td><?= $row["nama"] ?></td>
+                            <td><?= $row["kategori"] ?></td>
+                            <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="ubah.php?id= <?= $row['id'] ?>" role="button">Ubah</a>
+                                <a class="btn btn-danger btn-sm" href="hapus.php?id= <?= $row['id'] ?>" role="button" onclick="
+                                return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
+                            </td>
+                        </tr>
+                        <?php $i++; ?>
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- akhir tabel -->
 
 </body>
 

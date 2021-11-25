@@ -9,14 +9,6 @@ if (isset($_POST["register"])) {
         alert('User baru berhasil ditambahkan');
         </script>
         ";
-    } else {
-        // echo mysqli_error($koneksi);
-        // var_dump($koneksi);
-        echo "
-        <script>
-        alert('User baru gagal ditambahkan');
-        </script>
-        ";
     }
 }
 

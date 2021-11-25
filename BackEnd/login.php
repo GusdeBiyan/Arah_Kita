@@ -72,20 +72,26 @@ if (isset($_POST["login"])) {
     <title>login</title>
 
     <!-- font awesome cdn link  -->
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<!-- custom css file link  -->
-    <link rel="stylesheet" href="style.css">    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
     <section class="contact">
-        
+
         <div class="image">
+<<<<<<< HEAD
             <img src="bg/arahkita-2.png" alt="">
             </div>
     
+=======
+            <img src="arahkita-2.png" alt="">
+        </div>
+
+>>>>>>> d198f3dae4c0bbc87f3dd1eadc9260dea91a06e9
         <form action="" method="POST">
 
             <h1 class="heading">Welcome to Arah Kita</h1>
@@ -96,11 +102,11 @@ if (isset($_POST["login"])) {
 
 
             <ul style="list-style: none;">
-                 <div class="inputBox">
-                     <li>
+                <div class="inputBox">
+                    <li>
                         <input type="text" name="username" id="username" placeholder="Username"> <br><br>
-                     </li>
-                </div>    
+                    </li>
+                </div>
 
                 <div class="inputBox">
                     <li>

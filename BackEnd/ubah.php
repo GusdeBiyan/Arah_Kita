@@ -51,10 +51,14 @@ if (isset($_POST["submit"])) {
 <h1>Ubah data wisata</h1>
 
 <form action="" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="id" value="<?= $wisata['id'] ?>">
     <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
 
     <ul style="list-style: none;">
+        <li>
+            <label for="id">ID</label>
+            <input type="number" name="id" value="<?= $wisata['id'] ?>" disabled>
+            <br><br>
+        </li>
         <li>
             <label for="nama">Nama &emsp;&nbsp;:</label>
             <input type="text" name="nama" id="nama" required value="<?= $wisata['nama'] ?>">

@@ -71,8 +71,8 @@ if (isset($_POST["cari"])) {
                             <td><?= $row["kategori"] ?></td>
                             <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                             <td>
-                                <a class="btn btn-warning btn-sm" href="ubah.php?id= <?= $row['id'] ?>" role="button">Ubah</a>
-                                <a class="btn btn-danger btn-sm" href="hapus.php?id= <?= $row['id'] ?>" role="button" onclick="
+                                <a class="btn btn-warning btn-sm" href="ubah.php?id=<?= $row['id'] ?>" role="button">Ubah</a>
+                                <a class="btn btn-danger btn-sm" href="hapus.php?id=<?= $row['id'] ?>" role="button" onclick="
                                 return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
                             </td>
                         </tr>

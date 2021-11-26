@@ -55,8 +55,8 @@ if (isset($_POST["submit"])) {
 
     <ul style="list-style: none;">
         <li>
-            <label for="id">ID</label>
-            <input type="number" name="id" value="<?= $wisata['id'] ?>" disabled>
+            <label for="id">ID &emsp;&emsp;:</label>
+            <input type="text" name="id" value="<?= $wisata['id'] ?>" readonly>
             <br><br>
         </li>
         <li>

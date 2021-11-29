@@ -38,26 +38,26 @@ if (isset($_POST["cari"])) {
     <a class="btn btn-danger btn-sm" href="logout.php" role="button">Keluar</a>
     <br> <br>
 
+    <!-- awal search bar -->
     <form action="" method="POST" enctype="multipart/form-data">
-        <!-- <input type="text" name="keyword" size="30" autofocus placeholder="Masukan kata kunci" autocomplete="off"> -->
         <div class="container">
             <div class="input-group">
                 <input type="text" name="keyword" class="form-control" placeholder="Masukan kata kunci" autofocus autocomplete="off">
-                <button class="btn btn-outline-secondary" type="submit" name="cari">Cari</button>
+                <button class="btn btn-info text-white" type="submit" name="cari">Cari</button>
             </div>
         </div>
-        <!-- <button type="submit" name="cari">Cari</button> -->
         <br><br>
     </form>
+    <!-- akhir search bar -->
 
     <!-- awal tabel -->
     <div class=" container-md">
         <div class="card">
-            <div class="card-header bg-info text white">
+            <div class="card-header bg-info text-white">
                 Daftar Wisata
             </div>
             <div class="card-body">
-                <table class="table table-bordered">
+                <table class="table table-bordered text-center">
                     <tr>
                         <th>Nama</th>
                         <th>Kategori</th>
@@ -71,9 +71,9 @@ if (isset($_POST["cari"])) {
                             <td><?= $row["kategori"] ?></td>
                             <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                             <td>
-                                <a class="btn btn-warning btn-sm" href="ubah.php?id=<?= $row['id'] ?>" role="button">Ubah</a>
-                                <a class="btn btn-danger btn-sm" href="hapus.php?id=<?= $row['id'] ?>" role="button" onclick="
-                                return confirm ('Anda yakin ingin menghapus?');">Hapus</a>
+                                <a class="btn btn-warning btn-sm text-white" href="ubah.php?id=<?= $row['id'] ?>" role="button">Ubah</a>
+                                <a class="btn btn-danger btn-sm text-white" href="hapus.php?id=<?= $row['id'] ?>" role="button" onclick="
+                                return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                             </td>
                         </tr>
                         <?php $i++; ?>

@@ -68,7 +68,8 @@ if (isset($_POST["submit"])) {
         </li>
         <li>
             <label for="gambar">Gambar &nbsp;&nbsp;:</label>
-            <input type="file" name="gambar" id="gambar" required>
+            <input type="file" name="gambar" id="gambar"> <br>
+            <i style="color: blue; font-size: x-small;">Format gambar harus .jpg .jpeg .png</i>
             <br><br>
         </li>
         <li>

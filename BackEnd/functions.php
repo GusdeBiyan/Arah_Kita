@@ -58,7 +58,7 @@ function upload()
     if ($error === 4) {
         echo "
             <script>
-            alert('Silahkan upload gambar');
+            alert('Silahkan upload gambar terlebih dahulu');
             </script>
             ";
         return false;
@@ -66,13 +66,14 @@ function upload()
 
     // cek apakah yang diupload adalah gambar
     $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+
     // explode untuk memecah string menjadi array
     $ekstensiGambar = explode('.', $namaFile);
     $ekstensiGambar = strtolower(end($ekstensiGambar));
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
-        echo "
+        echo " 
         <script>
-        alert('Yang anda upload bukan gambar/format gambar yang anda masukan salah');
+        alert('Yang anda upload bukan gambar\\natau format gambar tidak didukung');
         </script>
         ";
         return false;
@@ -102,6 +103,15 @@ function upload()
 function hapus($id)
 {
     global $koneksi;
+
+    $result = mysqli_query($koneksi, "SELECT gambar FROM wisata WHERE id = $id");
+    $target = mysqli_fetch_assoc($result);
+    $lokasi = "img/" . $target["gambar"];
+
+    if (file_exists($lokasi)) {
+        unlink($lokasi);
+    }
+
     mysqli_query($koneksi, "DELETE FROM wisata WHERE id = $id");
     return mysqli_affected_rows($koneksi);
 }
@@ -176,6 +186,16 @@ function registrasi($data)
         echo "
         <script>
         alert('Konfirmasi password tidak sesuai');
+        </script>
+        ";
+        return false;
+    }
+
+    // cek minimal karakter password
+    if ($password < 8) {
+        echo "
+        <script>
+        alert('Password minimal 8 karakter');
         </script>
         ";
         return false;

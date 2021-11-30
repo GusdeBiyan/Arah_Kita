@@ -9,7 +9,7 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$wisata = tampil("SELECT * FROM wisata ORDER BY id DESC");
+$wisata = tampil("SELECT * FROM wisata ORDER BY id_wisata DESC");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {
@@ -71,8 +71,8 @@ if (isset($_POST["cari"])) {
                             <td><?= $row["kategori"] ?></td>
                             <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                             <td>
-                                <a class="btn btn-warning btn-sm text-white" href="ubah.php?id=<?= $row['id'] ?>" role="button">Ubah</a>
-                                <a class="btn btn-danger btn-sm text-white" href="hapus.php?id=<?= $row['id'] ?>" role="button" onclick="
+                                <a class="btn btn-warning btn-sm text-white" href="ubah.php?id=<?= $row['id_wisata'] ?>" role="button">Ubah</a>
+                                <a class="btn btn-danger btn-sm text-white" href="hapus.php?id=<?= $row['id_wisata'] ?>" role="button" onclick="
                                 return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                             </td>
                         </tr>

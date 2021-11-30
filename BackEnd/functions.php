@@ -30,6 +30,7 @@ function tambah($data)
     $kategori = htmlspecialchars($data["kategori"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
+    $harga_tiket = htmlspecialchars($data["harga_tiket"]);
 
     // upload gambar
     $gambar = upload();
@@ -39,7 +40,7 @@ function tambah($data)
 
     // query
     $query = "INSERT INTO wisata VALUES
-     ('', '$nama','$kategori','$deskripsi','$lokasi', '$gambar')";
+     ('', '$nama','$kategori','$deskripsi','$lokasi', '$gambar','$harga_tiket')";
 
     mysqli_query($koneksi, $query);
 
@@ -73,7 +74,7 @@ function upload()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo " 
         <script>
-        alert('Yang anda upload bukan gambar\\natau format gambar tidak didukung');
+        alert('Yang anda upload bukan gambar\\atau format gambar tidak didukung');
         </script>
         ";
         return false;
@@ -104,7 +105,7 @@ function hapus($id)
 {
     global $koneksi;
 
-    $result = mysqli_query($koneksi, "SELECT gambar FROM wisata WHERE id = $id");
+    $result = mysqli_query($koneksi, "SELECT gambar FROM wisata WHERE id_wisata = $id");
     $target = mysqli_fetch_assoc($result);
     $lokasi = "img/" . $target["gambar"];
 
@@ -112,7 +113,7 @@ function hapus($id)
         unlink($lokasi);
     }
 
-    mysqli_query($koneksi, "DELETE FROM wisata WHERE id = $id");
+    mysqli_query($koneksi, "DELETE FROM wisata WHERE id_wisata = $id");
     return mysqli_affected_rows($koneksi);
 }
 
@@ -125,6 +126,7 @@ function ubah($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $kategori = htmlspecialchars($data["kategori"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
+    $harga_tiket = htmlspecialchars($data["harga_tiket"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     // cek apakah users pilih gambar baru
@@ -141,8 +143,9 @@ function ubah($data)
         lokasi = '$lokasi',
         kategori = '$kategori' ,
         deskripsi = '$deskripsi',
+        harga_tiket = '$harga_tiket',
         gambar = '$gambar'
-            WHERE id = $id
+            WHERE id_wisata = $id
         ";
 
     mysqli_query($koneksi, $query);
@@ -171,7 +174,7 @@ function registrasi($data)
     $password2 = mysqli_real_escape_string($koneksi, $data["password2"]);
 
     // cek username yang sudah ada
-    $result = mysqli_query($koneksi, "SELECT username FROM users WHERE username = '$username'");
+    $result = mysqli_query($koneksi, "SELECT username FROM admin WHERE username = '$username'");
     if (mysqli_fetch_assoc($result)) {
         echo "
         <script>
@@ -192,7 +195,7 @@ function registrasi($data)
     }
 
     // cek minimal karakter password
-    if ($password < 8) {
+    if ($password > 8) {
         echo "
         <script>
         alert('Password minimal 8 karakter');
@@ -205,6 +208,6 @@ function registrasi($data)
     $password = password_hash($password, PASSWORD_DEFAULT);
 
     // tambahkan data ke database
-    mysqli_query($koneksi, "INSERT INTO users VALUES('','$username', '$password')");
+    mysqli_query($koneksi, "INSERT INTO admin VALUES('','$username', '$password')");
     return mysqli_affected_rows($koneksi);
 }

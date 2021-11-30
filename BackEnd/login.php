@@ -10,7 +10,7 @@ if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
     $key = $_COOKIE["key"];
 
     // ambil username berdasarkan id
-    $result = mysqli_query($koneksi, "SELECT username FROM users 
+    $result = mysqli_query($koneksi, "SELECT username FROM admin 
     WHERE id = '$id'");
     $row = mysqli_fetch_assoc($result);
 
@@ -32,7 +32,7 @@ if (isset($_POST["login"])) {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = mysqli_query($koneksi, "SELECT * FROM users
+    $result = mysqli_query($koneksi, "SELECT * FROM admin
      WHERE username = '$username'");
 
     // cek username
@@ -117,7 +117,7 @@ if (isset($_POST["login"])) {
                     <button type="submit" name="login" class="btn_login">Masuk</button>
                 </li>
                 <li>
-                    <p>Belum punya akun? <a href="registrasi.php">Daftar</a></p>
+                    <br>Belum punya akun? <a href="registrasi.php">Daftar</a></br>
                 </li>
             </ul>
         </form>

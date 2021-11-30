@@ -44,7 +44,7 @@ if (isset($_POST["register"])) {
                 <button type="submit" name="register">Daftar</button> &emsp;&emsp;
             </li>
             <li>
-                <p>Sudah punya akun? <a href="login.php">Masuk</a></p>
+                <br>Sudah punya akun? <a href="login.php">Masuk</a></br>
             </li>
         </ul>
     </form>

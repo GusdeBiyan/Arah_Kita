@@ -13,7 +13,7 @@ require "functions.php";
 $id = $_GET["id"];
 
 // query data wisata berdasarkan id
-$wisata = tampil("SELECT * FROM wisata WHERE id = $id")[0];
+$wisata = tampil("SELECT * FROM wisata WHERE id_wisata = $id")[0];
 
 // cek apakah tombol submit sudah ditekan
 if (isset($_POST["submit"])) {
@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
     <ul style="list-style: none;">
         <li>
             <label for="id">ID &emsp;&emsp;:</label>
-            <input type="text" name="id" value="<?= $wisata['id'] ?>" readonly>
+            <input type="text" name="id" value="<?= $wisata['id_wisata'] ?>" readonly>
             <br><br>
         </li>
         <li>
@@ -77,6 +77,11 @@ if (isset($_POST["submit"])) {
         <li>
             <label for="lokasi">Lokasi &emsp;:</label>
             <input type="lokasi" name="lokasi" id="lokasi" required value="<?= $wisata['lokasi'] ?>">
+            <br><br>
+        </li>
+        <li>
+            <label for="harga_tiket">Harga Tiket &emsp;:</label>
+            <input type="lokasi" name="harga_tiket" id="harga_tiket" required value="<?= $wisata['harga_tiket'] ?>">
             <br><br>
         </li>
         <li>

@@ -67,6 +67,11 @@ if (isset($_POST["submit"])) {
             <br><br>
         </li>
         <li>
+            <label for="harga_tiket">Harga Tiket &emsp;&nbsp;:</label>
+            <input type="text" name="harga_tiket" id="harga_tiket" required>
+            <br><br>
+        </li>
+        <li>
             <label for="gambar">Gambar &nbsp;&nbsp;:</label>
             <input type="file" name="gambar" id="gambar"> <br>
             <i style="color: blue; font-size: x-small;">Format gambar harus .jpg .jpeg .png</i>

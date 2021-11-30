@@ -192,7 +192,7 @@ function registrasi($data)
     }
 
     // cek minimal karakter password
-    if ($password < 8) {
+    if (strlen($password) < 8) {
         echo "
         <script>
         alert('Password minimal 8 karakter');

@@ -39,61 +39,105 @@ if (isset($_POST["submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ubah wisata</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>CRM | Dashboard </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
 </head>
+<body class="">
+<?php include("header.php");?>
+<div class="page-container row-fluid">	
+	<?php include("leftbar.php");?>
+	<div class="clearfix"></div> 
+  </div>
+  </div>
+  <a href="#" class="scrollup">Scroll</a>
+   <div class="footer-widget">		
+	<div class="progress transparent progress-small no-radius no-margin">
+		<div data-percentage="79%" class="progress-bar progress-bar-success animate-progress-bar" ></div>		
+	</div>
+	<div class="pull-right">
+	</div>
+  </div>
+  <div class="page-content"> 
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">  
+		<div class="page-title">
+        
+            <form action="" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
+        
+    <table width="100%" border="0">
 
-<h1>Ubah data wisata</h1>
-
-<form action="" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
-
-    <ul style="list-style: none;">
-        <li>
-            <label for="id">ID &emsp;&emsp;:</label>
-            <input type="text" name="id" value="<?= $wisata['id_wisata'] ?>" readonly>
-            <br><br>
-        </li>
-        <li>
-            <label for="nama">Nama &emsp;&nbsp;:</label>
-            <input type="text" name="nama" id="nama" required value="<?= $wisata['nama'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <label for="kategori">Kategori &emsp;&nbsp;:</label>
-            <input type="text" name="kategori" id="kategori" required value="<?= $wisata['kategori'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <label for="deskripsi">Deskripsi &emsp;&nbsp;:</label>
-            <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wisata['deskripsi'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <label for="lokasi">Lokasi &emsp;:</label>
-            <input type="lokasi" name="lokasi" id="lokasi" required value="<?= $wisata['lokasi'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <label for="harga_tiket">Harga Tiket &emsp;:</label>
-            <input type="lokasi" name="harga_tiket" id="harga_tiket" required value="<?= $wisata['harga_tiket'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <label for="gambar">Gambar &nbsp;&nbsp;:</label> <br>
-            <img src="img/<?= $wisata['gambar']; ?>" alt="gambar user" width="110" height="70"> <br>
-            <input type="file" name="gambar" id="gambar" value="<?= $wisata['gambar'] ?>">
-            <br><br>
-        </li>
-        <li>
-            <button type="submit" name="submit">Ubah data wisata</button>
-        </li>
-    </ul>
+    <tr>
+        <td height="42">ID </td>
+         <td><input type="text" name="id" value="<?= $wisata['id_wisata'] ?>"class="form-control" readonly></td>
+           
+    </tr>
+    <tr>
+          <td height="42"> Nama Wisata </td>
+           <td> <input type="text" name="nama" id="nama" required value="<?= $wisata['nama'] ?>"class="form-control"> </td>   
+    </tr>
+    <tr>
+            <td height="42">Kategori </td>
+            <td><select name="kategori" >
+                <option value="<?= $wisata['kategori'] ?>"><?= $wisata['kategori'] ?> </option>
+                <option value="Pantai">Pantai</option>
+                <option value="Gunung">Gunung</option>
+                <option value="Taman Nasional">Taman Nasional</option>
+                <option value="Lainya">Lainnya</option>
+                </select>
+             </td>
+            
+    <tr>
+          <td height="42"> Deskripsi </td>
+           <td> <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wisata['deskripsi'] ?>"class="form-control"> </td>   
+    </tr>
+       
+    <tr>
+          <td height="42"> Lokasi </td>
+           <td> <input type="text" name="lokasi" id="lokasi" required value="<?= $wisata['lokasi'] ?>"class="form-control"> </td>   
+    </tr>
+       <tr>
+          <td height="42"> Harga Tiket </td>
+           <td> <input type="text" name="harga_tiket" id="Harga_tiket" required value="<?= $wisata['harga_tiket'] ?>"class="form-control"> </td>   
+    </tr>
+        <tr>
+            <td>Gambar &nbsp;&nbsp; </td>
+            <td> <img src="img/<?= $wisata['gambar']; ?>" alt="gambar user" width="110" height="70"> 
+            <input type="file" name="gambar" id="gambar" value="<?= $wisata['gambar'] ?>"> <td>
+            
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td height="42">
+            <button type="submit" class="btn btn-primary" name="submit">Ubah data wisata</button>
+        </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 </form>
 
 <body>

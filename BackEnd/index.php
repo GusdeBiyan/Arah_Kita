@@ -20,62 +20,102 @@ if (isset($_POST["cari"])) {
 
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <title>halaman admin</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>Admin | Data Wisata</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
 </head>
+<body class="">
+<?php include("header.php");?>
+<div class="page-container row"> 
+  
+      <?php include("leftbar.php");?>
+    
+      <div class="clearfix"></div>
+      <!-- END SIDEBAR MENU -->
+    </div>
+  </div>
+    <div class="page-content">
+        <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+            <div id="portlet-config" class="modal hide">
+                <div class="modal-header">
+                    <button data-dismiss="modal" class="close" type="button"></button>
+                     <h3>Widget Settings</h3>
 
-<body>
-
-    <h1>Daftar Wisata</h1>
-
-    <a class="btn btn-success btn-sm" href="tambah.php" role="button">Tambah Wisata</a> &emsp;
-    <a class="btn btn-danger btn-sm" href="logout.php" role="button">Keluar</a>
-    <br> <br>
-
-    <!-- awal search bar -->
-    <form action="" method="POST" enctype="multipart/form-data">
-        <div class="container">
-            <div class="input-group">
-                <input type="text" name="keyword" class="form-control" placeholder="Masukan kata kunci" autofocus autocomplete="off">
-                <button class="btn btn-info text-white" type="submit" name="cari">Cari</button>
+                </div>
+                <div class="modal-body">Widget settings form goes here</div>
             </div>
-        </div>
-        <br><br>
-    </form>
-    <!-- akhir search bar -->
+            <div class="clearfix"></div>
+            <div class="content">
+                <ul class="breadcrumb">
+                    <li>
+                        <p>YOU ARE HERE</p>
+                    </li> 
+                    <li><a href="#" class="active">Data Wisata</a>
 
-    <!-- awal tabel -->
-    <div class=" container-md">
-        <div class="card">
-            <div class="card-header bg-info text-white">
-                Daftar Wisata
-            </div>
-            <div class="card-body">
-                <table class="table table-bordered text-center">
-                    <tr>
-                        <th>Nama</th>
-                        <th>Kategori</th>
-                        <th>Gambar</th>
-                        <th>Aksi</th>
-                    </tr>
-                    <?php $i = 1; ?>
-                    <?php foreach ($wisata as $row) : ?>
-                        <tr>
-                            <td><?= $row["nama"] ?></td>
-                            <td><?= $row["kategori"] ?></td>
-                            <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
-                            <td>
-                                <a class="btn btn-warning btn-sm text-white" href="ubah.php?id=<?= $row['id_wisata'] ?>" role="button">Ubah</a>
-                                <a class="btn btn-danger btn-sm text-white" href="hapus.php?id=<?= $row['id_wisata'] ?>" role="button" onclick="
-                                return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
-                            </td>
-                        </tr>
+                    </li>
+                </ul>
+                <div class="page-title">	<i class="icon-custom-left"></i>
+
+                    	<h3>Data Wisata </h3>	
+                </div>
+             
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="grid simple ">
+                                    <div class="grid-title no-border">
+                                    <a href="tambah.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
+                                        <div class="tools">	<a href="javascript:;" class="collapse"></a>
+											
+											<a href="javascript:;" class="reload"></a>
+											<a href="javascript:;" class="remove"></a>
+                                        </div>
+                                    </div>
+                                    <div class="grid-body no-border">
+                              
+                                            <table class="table table-hover no-more-tables">
+                                                <thead>
+                                                    <tr>
+                                                       
+                                                        <th>Nama Wisata</th>
+                                                        <th>Kategori </th>
+                                                        <th>Lokasi</th>
+                                                        <th>Gambar</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php $i = 1; ?>
+                                                <?php foreach ($wisata as $row) : ?>                    
+                                                    <tr>
+                                                        <td><?= $row["nama"] ?></td>
+                                                        <td><?= $row["kategori"] ?></td>
+                                                        <td><?= $row["lokasi"] ?></td>
+                                                        <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
+                                                        <td>
+                                                            <form name="abc" action="" method="post">
+                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah.php?id=<?= $row['id_wisata'] ?>" role="button">View n Edit</a>
+                                                            <a class="btn btn-danger btn-xs btn-mini" href="hapus.php?id=<?= $row['id_wisata'] ?>" role="button" onclick="
+                                                            return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
+                                                            </form>
+                                                        </td>
+                                                        </form>
+                                                    </tr>
                         <?php $i++; ?>
                     <?php endforeach; ?>
                 </table>
@@ -83,7 +123,40 @@ if (isset($_POST["cari"])) {
         </div>
     </div>
     <!-- akhir tabel -->
+<script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/boostrapv3/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/plugins/breakpoints.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
+<!-- END CORE JS FRAMEWORK --> 
+<!-- BEGIN PAGE LEVEL JS --> 	
+<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>  
+<script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+<script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-sparkline/jquery-sparkline.js"></script>
+<script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<!-- END PAGE LEVEL PLUGINS --> 	
+<script>
+	//Too Small for new file - Helps the to tick all options in the table 
+	$('table .checkbox input').click( function() {			
+		if($(this).is(':checked')){			
+			$(this).parent().parent().parent().toggleClass('row_selected');					
+		}
+		else{	
+		$(this).parent().parent().parent().toggleClass('row_selected');		
+		}
+	});
+	// Demo charts - not required 
+	$('.customer-sparkline').each(function () {	
+		$(this).sparkline('html', { type:$(this).attr("data-sparkline-type"), barColor:$(this).attr("data-sparkline-color") , enableTagOptions: true  });	
+	});
+</script>
+<!-- BEGIN CORE TEMPLATE JS --> 
+<script src="assets/js/core.js" type="text/javascript"></script> 
+<script src="assets/js/chat.js" type="text/javascript"></script> 
+<script src="assets/js/demo.js" type="text/javascript"></script> 
 
+<!-- END CORE TEMPLATE JS --> 
 </body>
 
 </html>

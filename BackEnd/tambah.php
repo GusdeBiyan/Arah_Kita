@@ -33,58 +33,117 @@ if (isset($_POST["submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tambah wisata</title>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<meta charset="utf-8" />
+<title>CRM | Dashboard </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta content="" name="description" />
+<meta content="" name="author" />
+<link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/animate.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css"/>
 </head>
+<body class="">
+<?php include("header.php");?>
+<div class="page-container row-fluid">	
+	<?php include("leftbar.php");?>
+	<div class="clearfix"></div> 
+  </div>
+  </div>
+  <a href="#" class="scrollup">Scroll</a>
+   <div class="footer-widget">		
+	<div class="progress transparent progress-small no-radius no-margin">
+		<div data-percentage="79%" class="progress-bar progress-bar-success animate-progress-bar" ></div>		
+	</div>
+	<div class="pull-right">
+	</div>
+  </div>
+  <div class="page-content"> 
+    <div id="portlet-config" class="modal hide">
+      <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+        <h3>Widget Settings</h3>
+      </div>
+      <div class="modal-body"> Widget settings form goes here </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="content">  
+		<div class="page-title">
+        
+             
+                        <form name="muser" method="post" action="" enctype="multipart/form-data">
+                            <h3>Tambahkan Wisata</h3>
+                     <table width="100%" border="0">
+  <tr>
+    <td height="42">Nama Wisata </td>
+    <td><input type="text" name="nama" id="nama"  class="form-control" required></td>
+  </tr>
+  <tr>
+    <td height="42">Kategori</td>
+    <td><select name="kategori" class="form-control" required>
+    <option value=""></option>
+    <option value="Pantai">Pantai</option>
+    <option value="Gunung">Gunung</option>
+    <option value="Taman Nasional">Taman Nasional</option>
+    <option value="Lainya">Lainnya</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td height="42">Deskripsi</td>
+    <td><input type="text" name="deskripsi" id="deskripsi"  class="form-control" required></td>
+  </tr>
+  <tr>
+    <td height="42">Lokasi</td>
+    <td><input type="text" name="lokasi" id="lokasi" class="form-control" required></td>
+  </tr>
+  <tr>
+    <td height="42">Gambar</td>
+    <td> <input type="file" name="gambar" id="gambar"   required></td>
+  </tr>
+  <tr>
+    <td height="42">Harga Tiket</td>
+    <td><input type="text" name="harga_tiket" id="harga_tiket"  class="form-control" required></td>
+  </tr>
+  
+  
+  <tr>
+    <td>&nbsp;</td>
+    <td height="42">
+                          <button type="submit" name="submit" class="btn btn-primary">Tambah Wisata</button></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
-<h1>Tambahkan wisata</h1>
-
-<form action="" method="post" enctype="multipart/form-data">
-    <ul style="list-style: none;">
-        <li>
-            <label for="nama">Nama &emsp;&nbsp;:</label>
-            <input type="text" name="nama" id="nama" required>
-            <br><br>
-        </li>
-        <li>
-            <label for="kategori">Kategori &emsp;&nbsp;:</label>
-            <input type="text" name="kategori" id="kategori" required>
-            <br><br>
-        </li>
-        <li>
-            <label for="deskripsi">Deskripsi &emsp;&nbsp;:</label>
-            <input type="text" name="deskripsi" id="deskripsi" required>
-            <br><br>
-        </li>
-        <li>
-            <label for="lokasi">Lokasi &emsp;:</label>
-            <input type="lokasi" name="lokasi" id="lokasi" required>
-            <br><br>
-        </li>
-        <li>
-            <label for="harga_tiket">Harga Tiket &emsp;&nbsp;:</label>
-            <input type="text" name="harga_tiket" id="harga_tiket" required>
-            <br><br>
-        </li>
-        <li>
-            <label for="gambar">Gambar &nbsp;&nbsp;:</label>
-            <input type="file" name="gambar" id="gambar"> <br>
-            <i style="color: blue; font-size: x-small;">Format gambar harus .jpg .jpeg .png</i>
-            <br><br>
-        </li>
-        <li>
-            <button type="submit" name="submit">Tambah data wisata</button>
-        </li>
-    </ul>
 </form>
-
-<body>
+</div>
+  </div>
+  </div>
+</div>
+ </div>
+<script src="assets/plugins/jquery-1.8.3.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/breakpoints.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-unveil/jquery.unveil.min.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-block-ui/jqueryblockui.js" type="text/javascript"></script> 
+<script src="assets/plugins/jquery-scrollbar/jquery.scrollbar.min.js" type="text/javascript"></script>
+<script src="assets/plugins/pace/pace.min.js" type="text/javascript"></script>  
+<script src="assets/plugins/jquery-numberAnimate/jquery.animateNumbers.js" type="text/javascript"></script>
+<script src="assets/js/core.js" type="text/javascript"></script> 
+<script src="assets/js/chat.js" type="text/javascript"></script> 
+<script src="assets/js/demo.js" type="text/javascript"></script> 
 
 </body>
-
 </html>

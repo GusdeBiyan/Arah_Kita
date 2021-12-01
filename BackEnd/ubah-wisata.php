@@ -83,7 +83,9 @@ if (isset($_POST["submit"])) {
     <div class="clearfix"></div>
     <div class="content">  
 		<div class="page-title">
-        
+      
+    <h3> <?= $wisata['nama'] ?>'s Profile</h3>    
+
             <form action="" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
         

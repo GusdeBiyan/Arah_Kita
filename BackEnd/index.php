@@ -79,7 +79,7 @@ if (isset($_POST["cari"])) {
                             <div class="col-md-12">
                                 <div class="grid simple ">
                                     <div class="grid-title no-border">
-                                    <a href="tambah.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
+                                    <a href="tambah-wisata.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
                                         <div class="tools">	<a href="javascript:;" class="collapse"></a>
 											
 											<a href="javascript:;" class="reload"></a>
@@ -109,7 +109,7 @@ if (isset($_POST["cari"])) {
                                                         <td><img src="img/<?= $row["gambar"] ?>" width="110" height="70">
                                                         <td>
                                                             <form name="abc" action="" method="post">
-                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah.php?id=<?= $row['id_wisata'] ?>" role="button">View n Edit</a>
+                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-wisata.php?id=<?= $row['id_wisata'] ?>" role="button">View n Edit</a>
                                                             <a class="btn btn-danger btn-xs btn-mini" href="hapus.php?id=<?= $row['id_wisata'] ?>" role="button" onclick="
                                                             return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                                                             </form>

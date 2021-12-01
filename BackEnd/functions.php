@@ -74,7 +74,7 @@ function upload()
     if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
         echo " 
         <script>
-        alert('Yang anda upload bukan gambar\\atau format gambar tidak didukung');
+        alert('Yang anda upload bukan gambar\\natau format gambar tidak didukung');
         </script>
         ";
         return false;
@@ -195,7 +195,7 @@ function registrasi($data)
     }
 
     // cek minimal karakter password
-    if ($password > 8) {
+    if (strlen($password) < 8) {
         echo "
         <script>
         alert('Password minimal 8 karakter');

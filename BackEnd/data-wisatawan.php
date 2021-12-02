@@ -9,11 +9,11 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$wisata = tampil("SELECT * FROM wisata ORDER BY id_wisata DESC");
+$data_wisatawan = tampil("SELECT * FROM data_wisatawan ORDER BY id_wisatawan DESC");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {
-    $wisata = cari($_POST["keyword"]);
+    $data_wisatawan = cari($_POST["keyword"]);
 }
 
 ?>
@@ -64,13 +64,13 @@ if (isset($_POST["cari"])) {
                     <li>
                         <p>YOU ARE HERE</p>
                     </li> 
-                    <li><a href="#" class="active">Data Wisata</a>
+                    <li><a href="#" class="active">Data Wisatawan</a>
 
                     </li>
                 </ul>
                 <div class="page-title">	<i class="icon-custom-left"></i>
 
-                    	<h3>Data Wisata </h3>	
+                    	<h3>Data Wisatawan </h3>	
                 </div>
              
                 <div class="row">
@@ -79,7 +79,7 @@ if (isset($_POST["cari"])) {
                             <div class="col-md-12">
                                 <div class="grid simple ">
                                     <div class="grid-title no-border">
-                                    <a href="tambah-wisata.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
+                                   
                                         <div class="tools">	<a href="javascript:;" class="collapse"></a>
 											
 											<a href="javascript:;" class="reload"></a>
@@ -91,26 +91,27 @@ if (isset($_POST["cari"])) {
                                             <table class="table table-hover no-more-tables">
                                                 <thead>
                                                     <tr>
-                                                       
-                                                        <th>Nama Wisata</th>
-                                                        <th>Kategori </th>
-                                                        <th>Lokasi</th>
-                                                        <th>Gambar</th>
+                                                        <th>ID</th>
+                                                        <th>Nama </th>
+                                                        <th>Email </th>
+                                                        <th>No.HP</th>
+                                                        <th>User Image</th>
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                 <?php $i = 1; ?>
-                                                <?php foreach ($wisata as $row) : ?>                    
+                                                <?php foreach ($data_wisatawan as $row) : ?>                    
                                                     <tr>
+                                                        <td><?= $row["id_wisatawan"] ?></td>
                                                         <td><?= $row["nama"] ?></td>
-                                                        <td><?= $row["kategori"] ?></td>
-                                                        <td><?= $row["lokasi"] ?></td>
-                                                        <td><img src="img/wisata/<?= $row["gambar"] ?>" width="110" height="70">
+                                                        <td><?= $row["email"] ?></td>
+                                                        <td><?= $row["no_hp"] ?></td>
+                                                        <td><img src="img/wisatawan/<?= $row["gambar"] ?>" width="110" height="70">
                                                         <td>
                                                             <form name="abc" action="" method="post">
-                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-wisata.php?id=<?= $row['id_wisata'] ?>" role="button">View n Edit</a>
-                                                            <a class="btn btn-danger btn-xs btn-mini" href="hapus.php?id=<?= $row['id_wisata'] ?>" role="button" onclick="
+                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-wisatawan.php?id=<?= $row['id_wisatawan'] ?>" role="button">View n Edit</a>
+                                                            <a class="btn btn-danger btn-xs btn-mini" href="hapus-wisatawan.php?id=<?= $row['id_wisatawan'] ?>" role="button" onclick="
                                                             return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                                                             </form>
                                                         </td>

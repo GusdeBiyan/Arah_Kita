@@ -47,7 +47,7 @@ function tambah($data)
     return mysqli_affected_rows($koneksi);
 }
 
-// fungsi upload wisata
+// fungsi upload gambar wisata
 function upload()
 {
     $namaFile = $_FILES["gambar"]["name"];
@@ -96,7 +96,7 @@ function upload()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, 'img/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'img/wisata/' . $namaFileBaru);
     return $namaFileBaru;
 }
 
@@ -107,7 +107,7 @@ function hapus($id)
 
     $result = mysqli_query($koneksi, "SELECT gambar FROM wisata WHERE id_wisata = $id");
     $target = mysqli_fetch_assoc($result);
-    $lokasi = "img/" . $target["gambar"];
+    $lokasi = "img/wisata/" . $target["gambar"];
 
     if (file_exists($lokasi)) {
         unlink($lokasi);
@@ -153,7 +153,7 @@ function ubah($data)
     return mysqli_affected_rows($koneksi);
 }
 
-// fungsi cari
+// fungsi cari wisata
 function cari($keyword)
 {
     $query = "SELECT * FROM wisata 
@@ -162,6 +162,119 @@ function cari($keyword)
     kategori LIKE '%$keyword%'";
 
     return tampil($query);
+}
+
+//fungsi upload gambar wisatawan
+function upload_wisatawan()
+{
+    $namaFile = $_FILES["gambar"]["name"];
+    $ukuranFile = $_FILES["gambar"]["size"];
+    $error = $_FILES["gambar"]["error"];
+    $tmpName = $_FILES["gambar"]["tmp_name"];
+
+    // cek apakah gambar sudah diupload
+    if ($error === 4) {
+        echo "
+            <script>
+            alert('Silahkan upload gambar terlebih dahulu');
+            </script>
+            ";
+        return false;
+    }
+
+    // cek apakah yang diupload adalah gambar
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+
+    // explode untuk memecah string menjadi array
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo " 
+        <script>
+        alert('Yang anda upload bukan gambar\\natau format gambar tidak didukung');
+        </script>
+        ";
+        return false;
+    }
+
+    // cek jika ukuran terlalu besar
+    if ($ukuranFile > 1000000) {
+        echo "
+        <script>
+        alert('Ukuran gambar terlalu besar');
+        </script>
+        ";
+        return false;
+    }
+
+    // lolos pengecekan dan gambar siap diupload
+    // generate nama gambar baru
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= ".";
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, 'img/wisatawan/' . $namaFileBaru);
+    return $namaFileBaru;
+}
+
+function hapus_wisatawan($id)
+{
+    global $koneksi;
+
+    $result = mysqli_query($koneksi, "SELECT gambar FROM data_wisatawan WHERE id_wisatawan = $id");
+    $target = mysqli_fetch_assoc($result);
+    $lokasi = "img/wisatawan/" . $target["gambar"];
+
+    if (file_exists($lokasi)) {
+        unlink($lokasi);
+    }
+
+    mysqli_query($koneksi, "DELETE FROM data_wisatawan WHERE id_wisatawan = $id");
+    return mysqli_affected_rows($koneksi);
+}
+
+// fungsi ubah wisatawan
+function ubah_wisatawan($data)
+{
+    global $koneksi;
+    $id = $data["id"];
+    $nama = htmlspecialchars($data["nama"]);
+    $nik = htmlspecialchars($data["nik"]);
+    $email = htmlspecialchars($data["email"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $password = htmlspecialchars($data["password"]);
+    $jenis_kelamin = htmlspecialchars($data["jenis_kelamin"]);
+    $tgl_lahir = htmlspecialchars($data["tgl_lahir"]);
+    $alamat = htmlspecialchars($data["alamat"]);
+    $gambarLama = htmlspecialchars($data["gambarLama"]);
+
+    // cek apakah users pilih gambar baru
+    if ($_FILES["gambar"]["error"] === 4) {
+        $gambar = $gambarLama;
+    } else {
+        $gambar = upload_wisatawan();
+    }
+
+
+    // query
+    $query = "UPDATE data_wisatawan SET
+        nama = '$nama',
+        nik = '$nik',
+        email = '$email' ,
+        no_hp = '$no_hp',
+        password = '$password',
+        jenis_kelamin = '$jenis_kelamin',
+        tgl_lahir = '$tgl_lahir',
+        alamat = '$alamat',
+        gambar = '$gambar'
+
+            WHERE id_wisatawan = $id
+        ";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+
 }
 
 // fungsi registrasi admin

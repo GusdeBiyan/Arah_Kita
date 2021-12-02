@@ -19,7 +19,7 @@
       
     
                            <li><a href="index.php"><span class="bi bi-image-alt"></span> Data Wisata</a></li>
-                            <li><a href="manage-users.php"><span class="fa fa-users"></span> Data Wisatawan </a></li>
+                            <li><a href="data-wisatawan.php"><span class="fa fa-users"></span> Data Wisatawan </a></li>
                             <li><a href=""><span class="fa fa-users"></span> Data Pengelola Wisata </a></li>
                             <li><a href="manage-tickets.php"><span class="fa fa-ticket"></span> Riwayat Transaksi</a></li>
                               <li ><a href="manage-quotes.php"> <span class="fa fa-tasks"></span> Manage Quotes</a></li> 

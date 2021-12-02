@@ -20,7 +20,7 @@ function tampil($query)
     return $rows;
 }
 
-// fungsi tambah
+// fungsi tambah wisata
 function tambah($data)
 {
     global $koneksi;
@@ -32,7 +32,7 @@ function tambah($data)
     $lokasi = htmlspecialchars($data["lokasi"]);
     $harga_tiket = htmlspecialchars($data["harga_tiket"]);
 
-    // upload gambar
+    // upload gambar wisata
     $gambar = upload();
     if ($gambar === false) {
         return false;
@@ -47,7 +47,7 @@ function tambah($data)
     return mysqli_affected_rows($koneksi);
 }
 
-// fungsi upload
+// fungsi upload wisata
 function upload()
 {
     $namaFile = $_FILES["gambar"]["name"];
@@ -100,7 +100,7 @@ function upload()
     return $namaFileBaru;
 }
 
-// fungsi hapus
+// fungsi hapus wisata
 function hapus($id)
 {
     global $koneksi;
@@ -117,7 +117,7 @@ function hapus($id)
     return mysqli_affected_rows($koneksi);
 }
 
-// fungsi ubah
+// fungsi ubah wisata
 function ubah($data)
 {
     global $koneksi;
@@ -164,7 +164,7 @@ function cari($keyword)
     return tampil($query);
 }
 
-// fungsi registrasi
+// fungsi registrasi admin
 function registrasi($data)
 {
     global $koneksi;

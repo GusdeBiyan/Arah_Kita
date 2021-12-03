@@ -84,8 +84,8 @@ if (isset($_POST["login"])) {
 
         <div class="image">
             <img src="bg/arahkita-2.png" alt="">
-            </div>
-    
+        </div>
+
 
         <form action="" method="POST">
 

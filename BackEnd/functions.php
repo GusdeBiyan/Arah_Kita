@@ -274,7 +274,6 @@ function ubah_wisatawan($data)
     mysqli_query($koneksi, $query);
 
     return mysqli_affected_rows($koneksi);
-
 }
 
 // fungsi registrasi admin

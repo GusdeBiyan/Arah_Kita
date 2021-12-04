@@ -67,11 +67,11 @@ if (isset($_POST["cari"])) {
                     <p>YOU ARE HERE</p>
                 </li>
                 <li><a href="#" class="active">Data Wisata</a>
-
                 </li>
             </ul>
-            <div class="page-title"> <i class="icon-custom-left"></i>
 
+            <div class="page-title">
+                <i class="icon-custom-left"></i>
                 <h3>Data Wisata </h3>
             </div>
 

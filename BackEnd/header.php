@@ -6,7 +6,7 @@
             <div class="iconset top-menu-toggle-white"></div>
           </a> </li>
       </ul>
-      <a href="home.php" style="color:#FFF; font-size:24px; padding-top:15px;"> Arah Kita</a>
+      <a style="color: white; margin-left: 30px; font-size: 24px;">Arah Kita</a>
       <ul class="nav pull-right notifcation-center">
 
 

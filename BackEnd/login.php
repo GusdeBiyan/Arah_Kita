@@ -5,9 +5,9 @@ session_start();
 require "functions.php";
 
 // cek cookie
-if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
-    $id = $_COOKIE["id"];
-    $key = $_COOKIE["key"];
+if (isset($_COOKIE["x"]) && isset($_COOKIE["y"])) {
+    $id = $_COOKIE["x"];
+    $key = $_COOKIE["y"];
 
     // ambil username berdasarkan id
     $result = mysqli_query($koneksi, "SELECT username FROM admin 
@@ -49,8 +49,8 @@ if (isset($_POST["login"])) {
             if (isset($_POST["remember"])) {
 
                 // buat cookie
-                setcookie("id", hash("sha512", $row["id"]), time() + 300);
-                setcookie("key", hash("sha512", $row["username"]), time() + 300);
+                setcookie("x", $row["id"], time() + 300);
+                setcookie("y", hash("sha512", $row["username"]), time() + 300);
             }
 
             header("location: index.php");
@@ -75,7 +75,7 @@ if (isset($_POST["login"])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <!-- custom css file link  -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/login-style.css">
 
 </head>
 

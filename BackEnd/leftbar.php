@@ -3,11 +3,9 @@
    <!-- BEGIN MINI-PROFILE -->
    <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
      <div class="user-info-wrapper">
-
        <div class="user-info">
          <div class="greeting">Welcome</div>
          <div class="username">Admin</div>
-
        </div>
      </div>
      <!-- END MINI-PROFILE -->
@@ -17,7 +15,6 @@
      <br>
 
      <ul>
-
        <li>
          <a href="index.php"><span class="fa fa-map-marker">&nbsp;&nbsp;</span> Data Wisata</a>
        </li>
@@ -39,5 +36,4 @@
        <li>
          <a href="change-password.php"><span class="fa fa-file-text-o"></span> Ganti Password</a>
        </li>
-
      </ul>

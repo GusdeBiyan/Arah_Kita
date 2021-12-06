@@ -107,10 +107,10 @@ function hapus($id)
 
     $result = mysqli_query($koneksi, "SELECT gambar FROM wisata WHERE id_wisata = $id");
     $target = mysqli_fetch_assoc($result);
-    $lokasi = "img/wisata/" . $target["gambar"];
+    $lokasiFile = "img/wisata/" . $target["gambar"];
 
-    if (file_exists($lokasi)) {
-        unlink($lokasi);
+    if (file_exists($lokasiFile)) {
+        unlink($lokasiFile);
     }
 
     mysqli_query($koneksi, "DELETE FROM wisata WHERE id_wisata = $id");
@@ -133,6 +133,12 @@ function ubah($data)
     if ($_FILES["gambar"]["error"] === 4) {
         $gambar = $gambarLama;
     } else {
+        // hapus gambar lama dan ganti dengan gambar baru
+        $lokasiFile = "img/wisata/" . $gambarLama;
+
+        if (file_exists($lokasiFile)) {
+            unlink($lokasiFile);
+        }
         $gambar = upload();
     }
 

@@ -219,7 +219,7 @@ function upload_wisatawan()
     $namaFileBaru .= ".";
     $namaFileBaru .= $ekstensiGambar;
 
-    move_uploaded_file($tmpName, 'img/wisatawan/' . $namaFileBaru);
+    move_uploaded_file($tmpName, 'img/user/' . $namaFileBaru);
     return $namaFileBaru;
 }
 
@@ -227,15 +227,15 @@ function hapus_wisatawan($id)
 {
     global $koneksi;
 
-    $result = mysqli_query($koneksi, "SELECT gambar FROM data_wisatawan WHERE id_wisatawan = $id");
+    $result = mysqli_query($koneksi, "SELECT gambar FROM data_user WHERE id_user = $id");
     $target = mysqli_fetch_assoc($result);
-    $lokasi = "img/wisatawan/" . $target["gambar"];
+    $lokasi = "img/user/" . $target["gambar"];
 
     if (file_exists($lokasi)) {
         unlink($lokasi);
     }
 
-    mysqli_query($koneksi, "DELETE FROM data_wisatawan WHERE id_wisatawan = $id");
+    mysqli_query($koneksi, "DELETE FROM data_user WHERE id_user = $id");
     return mysqli_affected_rows($koneksi);
 }
 
@@ -263,7 +263,7 @@ function ubah_wisatawan($data)
 
 
     // query
-    $query = "UPDATE data_wisatawan SET
+    $query = "UPDATE data_user SET
         nama = '$nama',
         nik = '$nik',
         email = '$email' ,
@@ -274,7 +274,7 @@ function ubah_wisatawan($data)
         alamat = '$alamat',
         gambar = '$gambar'
 
-            WHERE id_wisatawan = $id
+            WHERE id_user = $id
         ";
 
     mysqli_query($koneksi, $query);

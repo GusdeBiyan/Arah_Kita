@@ -9,11 +9,11 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$data_wisatawan = tampil("SELECT * FROM data_wisatawan ORDER BY id_wisatawan DESC");
+$data_user = tampil("SELECT * FROM data_user ORDER BY id_user DESC");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {
-    $data_wisatawan = cari($_POST["keyword"]);
+    $data_user = cari($_POST["keyword"]);
 }
 
 ?>
@@ -66,13 +66,13 @@ if (isset($_POST["cari"])) {
                 <li>
                     <p>YOU ARE HERE</p>
                 </li>
-                <li><a href="#" class="active">Data Wisatawan</a>
+                <li><a href="#" class="active">Data User</a>
 
                 </li>
             </ul>
             <div class="page-title"> <i class="icon-custom-left"></i>
 
-                <h3>Data Wisatawan </h3>
+                <h3>Data User </h3>
             </div>
 
             <div class="row">
@@ -103,17 +103,17 @@ if (isset($_POST["cari"])) {
                                         </thead>
                                         <tbody>
                                             <?php $i = 1; ?>
-                                            <?php foreach ($data_wisatawan as $row) : ?>
+                                            <?php foreach ($data_user as $row) : ?>
                                                 <tr>
-                                                    <td><?= $row["id_wisatawan"] ?></td>
+                                                    <td><?= $row["id_user"] ?></td>
                                                     <td><?= $row["nama"] ?></td>
                                                     <td><?= $row["email"] ?></td>
                                                     <td><?= $row["no_hp"] ?></td>
-                                                    <td><img src="img/wisatawan/<?= $row["gambar"] ?>" width="110" height="70">
+                                                    <td><img src="img/user/<?= $row["gambar"] ?>" width="110" height="70">
                                                     <td>
                                                         <form name="abc" action="" method="post">
-                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-wisatawan.php?id=<?= $row['id_wisatawan'] ?>" role="button">View n Edit</a>
-                                                            <a class="btn btn-danger btn-xs btn-mini" href="hapus-wisatawan.php?id=<?= $row['id_wisatawan'] ?>" role="button" onclick="
+                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-user.php?id=<?= $row['id_user'] ?>" role="button">Edit</a>
+                                                            <a class="btn btn-danger btn-xs btn-mini" href="hapus-user.php?id=<?= $row['id_user'] ?>" role="button" onclick="
                                                             return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                                                         </form>
                                                     </td>

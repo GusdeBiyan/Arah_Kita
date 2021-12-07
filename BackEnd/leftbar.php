@@ -19,7 +19,7 @@
          <a href="index.php"><span class="fa fa-map-marker">&nbsp;&nbsp;</span> Data Wisata</a>
        </li>
        <li>
-         <a href="data-wisatawan.php"><span class="fa fa-users"></span> Data Wisatawan </a>
+         <a href="data-user.php"><span class="fa fa-users"></span> Data User </a>
        </li>
        <li>
          <a href=""><span class="fa fa-users"></span> Data Pengelola Wisata </a>

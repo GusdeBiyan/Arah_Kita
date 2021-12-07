@@ -13,7 +13,7 @@ require "functions.php";
 $id = $_GET["id"];
 
 // query data wisata berdasarkan id
-$data_wisatawan = tampil("SELECT * FROM data_wisatawan WHERE id_wisatawan = $id")[0];
+$data_user = tampil("SELECT * FROM data_user WHERE id_user = $id")[0];
 
 // cek apakah tombol submit sudah ditekan
 if (isset($_POST["submit"])) {
@@ -23,14 +23,14 @@ if (isset($_POST["submit"])) {
     echo "
         <script>
         alert('Data berhasil diubah');
-        document.location.href = 'data-wisatawan.php';
+        document.location.href = 'data-user.php';
         </script>
         ";
   } else {
     echo "
         <script>
         alert('Data gagal diubah');
-        document.location.href = 'data-wisatawan.php';
+        document.location.href = 'data-user.php';
         </script>
         ";
   }
@@ -86,42 +86,42 @@ if (isset($_POST["submit"])) {
     <div class="content">
       <div class="page-title">
 
-        <h3> <?= $data_wisatawan['nama'] ?>'s Profile</h3>
+        <h3> <?= $data_user['nama'] ?>'s Profile</h3>
 
         <form action="" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="gambarLama" value="<?= $data_wisatawan['gambar'] ?>">
+          <input type="hidden" name="gambarLama" value="<?= $data_user['gambar'] ?>">
 
           <table width="100%" border="0">
 
             <tr>
               <td height="42">ID </td>
-              <td><input type="text" name="id" value="<?= $data_wisatawan['id_wisatawan'] ?>" class="form-control" readonly></td>
+              <td><input type="text" name="id" value="<?= $data_user['id_user'] ?>" class="form-control" readonly></td>
 
             </tr>
             <tr>
               <td height="42"> Nama </td>
-              <td> <input type="text" name="nama" id="nama" required value="<?= $data_wisatawan['nama'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="nama" id="nama" required value="<?= $data_user['nama'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> NIK </td>
-              <td> <input type="text" name="nik" id="nik" required value="<?= $data_wisatawan['nik'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="nik" id="nik" required value="<?= $data_user['nik'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> Email </td>
-              <td> <input type="text" name="email" id="email" required value="<?= $data_wisatawan['email'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="email" id="email" required value="<?= $data_user['email'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> Password </td>
-              <td> <input type="text" name="password" id="password" required value="<?= $data_wisatawan['password'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="password" id="password" required value="<?= $data_user['password'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> No.HP </td>
-              <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_wisatawan['no_hp'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_user['no_hp'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42">Jenis Kelamin </td>
               <td><select name="jenis_kelamin">
-                  <option value="<?= $data_wisatawan['jenis_kelamin'] ?>"><?= $data_wisatawan['jenis_kelamin'] ?> </option>
+                  <option value="<?= $data_user['jenis_kelamin'] ?>"><?= $data_user['jenis_kelamin'] ?> </option>
                   <option value="Pria">Pria</option>
                   <option value="Perempuan">Perempuan</option>
 
@@ -131,23 +131,23 @@ if (isset($_POST["submit"])) {
             <tr>
             <tr>
               <td height="42"> Tanggal Lahir </td>
-              <td> <input type="text" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_wisatawan['tgl_lahir'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_user['tgl_lahir'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> Alamat </td>
-              <td> <input type="text" name="alamat" id="alamat" required value="<?= $data_wisatawan['alamat'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="alamat" id="alamat" required value="<?= $data_user['alamat'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td>User Image &nbsp;&nbsp; </td>
-              <td> <img src="img/wisatawan/<?= $data_wisatawan['gambar']; ?>" alt="gambar user" width="110" height="70">
-                <input type="file" name="gambar" id="gambar" value="<?= $data_wisatawan['gambar'] ?>">
+              <td> <img src="img/user/<?= $data_user['gambar']; ?>" alt="gambar user" width="110" height="70">
+                <input type="file" name="gambar" id="gambar" value="<?= $data_user['gambar'] ?>">
               <td>
 
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td height="42">
-                <button type="submit" class="btn btn-primary" name="submit">Ubah data wisata</button>
+                <button type="submit" class="btn btn-primary" name="submit">Ubah data User</button>
             </tr>
             <tr>
               <td>&nbsp;</td>

@@ -86,7 +86,7 @@ if (isset($_POST["submit"])) {
     <div class="content">
       <div class="page-title">
 
-        <h3> <?= $data_user['nama'] ?>'s Profile</h3>
+        <h3> <?= $data_user['nama_user'] ?>'s Profile</h3>
 
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="gambarLama" value="<?= $data_user['gambar'] ?>">
@@ -100,7 +100,7 @@ if (isset($_POST["submit"])) {
             </tr>
             <tr>
               <td height="42"> Nama </td>
-              <td> <input type="text" name="nama" id="nama" required value="<?= $data_user['nama'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="nama_user" id="nama_user" required value="<?= $data_user['nama_user'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42"> NIK </td>

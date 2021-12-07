@@ -106,7 +106,7 @@ if (isset($_POST["cari"])) {
                                             <?php foreach ($wisata as $row) : ?>
                                                 <tr>
                                                     <td><?= $row["id_wisata"] ?></td>
-                                                    <td><?= $row["nama"] ?></td>
+                                                    <td><?= $row["nama_wisata"] ?></td>
                                                     <td><?= $row["kategori"] ?></td>
                                                     <td><?= $row["lokasi"] ?></td>
                                                     <td><img src="img/wisata/<?= $row["gambar"] ?>" width="110" height="70">

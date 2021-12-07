@@ -106,7 +106,7 @@ if (isset($_POST["cari"])) {
                                             <?php foreach ($data_user as $row) : ?>
                                                 <tr>
                                                     <td><?= $row["id_user"] ?></td>
-                                                    <td><?= $row["nama"] ?></td>
+                                                    <td><?= $row["nama_user"] ?></td>
                                                     <td><?= $row["email"] ?></td>
                                                     <td><?= $row["no_hp"] ?></td>
                                                     <td><img src="img/user/<?= $row["gambar"] ?>" width="110" height="70">

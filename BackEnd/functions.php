@@ -26,7 +26,7 @@ function tambah($data)
     global $koneksi;
     // ambil data dari tiap elemen dalam form
     // htmlspecialchars() supaya tidak disusupi script
-    $nama = htmlspecialchars($data["nama"]);
+    $nama_wisata = htmlspecialchars($data["nama_wisata"]);
     $kategori = htmlspecialchars($data["kategori"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
@@ -40,7 +40,7 @@ function tambah($data)
 
     // query
     $query = "INSERT INTO wisata VALUES
-     ('', '$nama','$kategori','$deskripsi','$lokasi', '$gambar','$harga_tiket')";
+     ('', '$nama_wisata','$kategori','$deskripsi','$lokasi', '$gambar','$harga_tiket')";
 
     mysqli_query($koneksi, $query);
 
@@ -122,7 +122,7 @@ function ubah($data)
 {
     global $koneksi;
     $id = $data["id"];
-    $nama = htmlspecialchars($data["nama"]);
+    $nama_wisata = htmlspecialchars($data["nama_wisata"]);
     $lokasi = htmlspecialchars($data["lokasi"]);
     $kategori = htmlspecialchars($data["kategori"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
@@ -145,7 +145,7 @@ function ubah($data)
 
     // query
     $query = "UPDATE wisata SET
-        nama = '$nama',
+        nama_wisata = '$nama_wisata',
         lokasi = '$lokasi',
         kategori = '$kategori' ,
         deskripsi = '$deskripsi',
@@ -244,7 +244,7 @@ function ubah_wisatawan($data)
 {
     global $koneksi;
     $id = $data["id"];
-    $nama = htmlspecialchars($data["nama"]);
+    $nama_user = htmlspecialchars($data["nama_user"]);
     $nik = htmlspecialchars($data["nik"]);
     $email = htmlspecialchars($data["email"]);
     $no_hp = htmlspecialchars($data["no_hp"]);
@@ -264,7 +264,7 @@ function ubah_wisatawan($data)
 
     // query
     $query = "UPDATE data_user SET
-        nama = '$nama',
+        nama_user = '$nama_user',
         nik = '$nik',
         email = '$email' ,
         no_hp = '$no_hp',

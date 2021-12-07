@@ -86,7 +86,7 @@ if (isset($_POST["submit"])) {
     <div class="content">
       <div class="page-title">
 
-        <h3> <?= $wisata['nama'] ?>'s Profile</h3>
+        <h3> <?= $wisata['nama_wisata'] ?>'s Profile</h3>
 
         <form action="" method="POST" enctype="multipart/form-data">
           <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
@@ -100,7 +100,7 @@ if (isset($_POST["submit"])) {
             </tr>
             <tr>
               <td height="42"> Nama Wisata </td>
-              <td> <input type="text" name="nama" id="nama" required value="<?= $wisata['nama'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="nama_wisata" id="nama_wisata" required value="<?= $wisata['nama_wisata'] ?>" class="form-control"> </td>
             </tr>
             <tr>
               <td height="42">Kategori </td>

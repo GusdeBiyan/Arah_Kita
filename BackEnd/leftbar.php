@@ -1,3 +1,14 @@
+ <?php
+
+  session_start();
+
+  if (isset($_SESSION["login"]) === false) {
+    header("location: login.php");
+    exit;
+  }
+
+  ?>
+
  <!-- BEGIN SIDEBAR -->
  <div class="page-sidebar" id="main-menu">
    <!-- BEGIN MINI-PROFILE -->

@@ -282,6 +282,47 @@ function ubah_wisatawan($data)
     return mysqli_affected_rows($koneksi);
 }
 
+//fungi hapus data ppengelola
+function hapus_pengelola($id)
+{
+    global $koneksi;
+
+
+    mysqli_query($koneksi, "DELETE FROM data_pengelola WHERE id_pengelola = $id");
+    return mysqli_affected_rows($koneksi);
+}
+
+//fungsi ubah data pengelola
+function ubah_pengelola($data)
+{
+    global $koneksi;
+    $id = $data["id"];
+    $nama_pengelola = htmlspecialchars($data["nama_pengelola"]);
+    $nik_pengelola = htmlspecialchars($data["nik_pengelola"]);
+    $email = htmlspecialchars($data["email"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $password = htmlspecialchars($data["password"]);
+   
+
+   
+
+    // query
+    $query = "UPDATE data_pengelola SET
+        nama_pengelola = '$nama_pengelola',
+        nik_pengelola = '$nik_pengelola',
+        email = '$email' ,
+        no_hp = '$no_hp',
+        password = '$password'
+       
+
+            WHERE id_pengelola = $id
+        ";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
 // fungsi registrasi admin
 function registrasi($data)
 {

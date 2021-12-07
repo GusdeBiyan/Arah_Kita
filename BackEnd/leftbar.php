@@ -22,7 +22,7 @@
          <a href="data-user.php"><span class="fa fa-users"></span> Data User </a>
        </li>
        <li>
-         <a href=""><span class="fa fa-users"></span> Data Pengelola Wisata </a>
+         <a href="data-pengelola.php"><span class="fa fa-users"></span> Data Pengelola Wisata </a>
        </li>
        <li>
          <a href="manage-tickets.php"><span class="fa fa-ticket"></span> Riwayat Transaksi</a>

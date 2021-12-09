@@ -96,7 +96,8 @@ if (isset($_POST["cari"])) {
                                                 <th>ID</th>
                                                 <th>Nama Pengelola</th>
                                                 <th>NIK </th>
-                                                <th>Nama Wisata yang dikelola</th>
+                                                <th>Email </th>
+                                                <th>Wisata yang dikelola</th>
                                               
                                                 <th>Action</th>
                                             </tr>
@@ -108,6 +109,7 @@ if (isset($_POST["cari"])) {
                                                     <td><?= $row["id_pengelola"] ?></td>
                                                     <td><?= $row["nama_pengelola"] ?></td>
                                                     <td><?= $row["nik_pengelola"] ?></td>
+                                                    <td><?= $row["email"] ?></td>
                                                     <td><?= $row["nama_wisata"] ?></td>
             
                                                     <td>

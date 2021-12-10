@@ -82,12 +82,7 @@ if (isset($_POST["cari"])) {
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
                                     <a href="tambah-wisata.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
-                                    <div class="tools"> <a href="javascript:;" class="collapse"></a>
-
-                                        <a href="javascript:;" class="reload"></a>
-                                        <a href="javascript:;" class="remove"></a>
-                                    </div>
-                                </div>
+                                    
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">

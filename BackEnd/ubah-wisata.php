@@ -64,6 +64,7 @@ if (isset($_POST["submit"])) {
   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/leftbar.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="">

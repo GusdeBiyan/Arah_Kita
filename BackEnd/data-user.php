@@ -38,6 +38,7 @@ if (isset($_POST["cari"])) {
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/leftbar.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="">
@@ -82,11 +83,7 @@ if (isset($_POST["cari"])) {
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
 
-                                    <div class="tools"> <a href="javascript:;" class="collapse"></a>
-
-                                        <a href="javascript:;" class="reload"></a>
-                                        <a href="javascript:;" class="remove"></a>
-                                    </div>
+                                   
                                 </div>
                                 <div class="grid-body no-border">
 

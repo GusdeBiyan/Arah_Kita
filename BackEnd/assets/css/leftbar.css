@@ -1,0 +1,35 @@
+.page-sidebar .page-sidebar-wrapper {
+    position: relative;
+    overflow-y: auto;
+    background-color: #0251BB;
+}
+
+.page-container {
+
+    background-color: #0251BB;
+}
+
+.header .header-seperation {
+    background-color: #0251BB;
+}
+
+.header-image {
+    width: 200px;
+    margin-top: 0px;
+    margin-left: 25px;
+}
+
+.page-content {
+    background-color: #DEEEFE;
+}
+
+.page-sidebar .page-sidebar-wrapper>ul>li>a {
+    color: white;
+}
+
+.page-sidebar .page-sidebar-wrapper>ul>li.open>a,
+.page-sidebar .page-sidebar-wrapper>ul>li>a:hover,
+.page-sidebar .page-sidebar-wrapper>ul>li:hover>a {
+    background: #DEEEFE;
+    color: black;
+}

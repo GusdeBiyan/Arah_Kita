@@ -13,12 +13,9 @@
  <div class="page-sidebar" id="main-menu">
    <!-- BEGIN MINI-PROFILE -->
    <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
-     <div class="user-info-wrapper">
-       <div class="user-info">
-         <div class="greeting">Welcome</div>
-         <div class="username">Admin</div>
-       </div>
-     </div>
+  
+      
+     
      <!-- END MINI-PROFILE -->
 
      <!-- BEGIN SIDEBAR MENU -->

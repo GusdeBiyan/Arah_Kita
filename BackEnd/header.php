@@ -6,7 +6,9 @@
             <div class="iconset top-menu-toggle-white"></div>
           </a> </li>
       </ul>
-      <a style="color: white; margin-left: 30px; font-size: 24px;">Arah Kita</a>
+      
+        <img  alt="" class="header-image" src="bg/logo1.png">
+     
       <ul class="nav pull-right notifcation-center">
 
 

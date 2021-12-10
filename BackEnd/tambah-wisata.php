@@ -85,8 +85,8 @@ if (isset($_POST["submit"])) {
           <h3>Tambahkan Wisata</h3>
           <table width="100%" border="0">
             <tr>
-              <td height="42">Nama Wisata </td>
-              <td><input type="text" name="nama" id="nama" class="form-control" required></td>
+              <td height="42">Nama Wisata</td>
+              <td><input type="text" name="nama_wisata" id="nama_wisata" class="form-control" required></td>
             </tr>
             <tr>
               <td height="42">Kategori</td>
@@ -95,7 +95,7 @@ if (isset($_POST["submit"])) {
                   <option value="Pantai">Pantai</option>
                   <option value="Gunung">Gunung</option>
                   <option value="Taman Nasional">Taman Nasional</option>
-                  <option value="Lainya">Lainnya</option>
+                  <option value="Lainnya">Lainnya</option>
                 </select>
               </td>
             </tr>

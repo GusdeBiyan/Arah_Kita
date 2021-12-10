@@ -109,7 +109,7 @@ if (isset($_POST["cari"])) {
                                                     <td><?= $row["nama_wisata"] ?></td>
                                                     <td><?= $row["kategori"] ?></td>
                                                     <td><?= $row["lokasi"] ?></td>
-                                                    <td><img src="img/wisata/<?= $row["gambar"] ?>" width="110" height="70">
+                                                    <td><img src="img/wisata/<?= $row["gambar"] ?>" alt="gambar wisata" width="110" height="70">
                                                     <td>
                                                         <form name="abc" action="" method="post">
                                                             <a class="btn btn-primary btn-xs btn-mini" href="ubah-wisata.php?id=<?= $row['id_wisata'] ?>" role="button">Edit</a>

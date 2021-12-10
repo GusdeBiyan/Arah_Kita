@@ -7,6 +7,7 @@ if (isset($_POST["register"])) {
         echo "
         <script>
         alert('User baru berhasil ditambahkan');
+        document.location.href = 'index.php';
         </script>
         ";
     }

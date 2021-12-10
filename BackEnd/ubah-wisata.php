@@ -26,6 +26,13 @@ if (isset($_POST["submit"])) {
         document.location.href = 'index.php';
         </script>
         ";
+  } else if (ubah($_POST) == 0) {
+    echo "
+        <script>
+        alert('Data tidak diubah');
+        document.location.href = 'index.php';
+        </script>
+        ";
   } else {
     echo "
         <script>
@@ -128,7 +135,7 @@ if (isset($_POST["submit"])) {
             </tr>
             <tr>
               <td>Gambar &nbsp;&nbsp; </td>
-              <td> <img src="img/wisata/<?= $wisata['gambar']; ?>" alt="gambar user" width="110" height="70">
+              <td> <img src="img/wisata/<?= $wisata['gambar']; ?>" alt="gambar wisata" width="110" height="70">
                 <input type="file" name="gambar" id="gambar" value="<?= $wisata['gambar'] ?>">
               <td>
 

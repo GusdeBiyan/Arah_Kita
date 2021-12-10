@@ -282,7 +282,7 @@ function ubah_wisatawan($data)
     return mysqli_affected_rows($koneksi);
 }
 
-//fungi hapus data ppengelola
+//fungi hapus data pengelola
 function hapus_pengelola($id)
 {
     global $koneksi;
@@ -302,9 +302,9 @@ function ubah_pengelola($data)
     $email = htmlspecialchars($data["email"]);
     $no_hp = htmlspecialchars($data["no_hp"]);
     $password = htmlspecialchars($data["password"]);
-   
 
-   
+
+
 
     // query
     $query = "UPDATE data_pengelola SET
@@ -338,6 +338,16 @@ function registrasi($data)
         echo "
         <script>
         alert('Username sudah digunakan');
+        </script>
+        ";
+        return false;
+    }
+
+    // cek minimal username
+    if (strlen($username) < 5) {
+        echo "
+        <script>
+        alert('Username minimal 5 karakter');
         </script>
         ";
         return false;

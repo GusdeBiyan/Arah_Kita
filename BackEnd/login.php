@@ -116,9 +116,7 @@ if (isset($_POST["login"])) {
                 <li>
                     <button type="submit" name="login" class="btn_login">Masuk</button>
                 </li>
-                <li>
-                    <br>Belum punya akun? <a href="registrasi.php">Daftar</a></br>
-                </li>
+                
             </ul>
         </form>
 

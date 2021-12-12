@@ -43,7 +43,7 @@ if (isset($_POST["cari"])) {
 
 <body class="">
     <?php include("header.php"); ?>
-    <div class="page-container ">
+    <div class="page-container row-fluid ">
 
         <?php include("leftbar.php"); ?>
 

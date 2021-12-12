@@ -1,6 +1,6 @@
  <?php
 
-  session_start();
+
 
   if (isset($_SESSION["login"]) === false) {
     header("location: login.php");
@@ -13,6 +13,14 @@
  <div class="page-sidebar" id="main-menu">
    <!-- BEGIN MINI-PROFILE -->
    <div class="page-sidebar-wrapper scrollbar-dynamic" id="main-menu-wrapper">
+      <div class="user-info-wrapper">
+        
+        <div class="user-info">
+          <div class="greeting">Welcome</div>
+          <div class="username">Admin</div>
+
+        </div>
+      </div>
   
       
      
@@ -36,12 +44,10 @@
          <a href="manage-tickets.php"><span class="fa fa-ticket"></span> Riwayat Transaksi</a>
        </li>
        <li>
-         <a href="manage-quotes.php"> <span class="fa fa-tasks"></span> Manage Quotes</a>
+         <a href="registrasi.php"><span class="fa fa-users"></span> Tambah Admin</a>
        </li>
        <li>
-         <a href="user-access-log.php"><span class="fa fa-users">&nbsp;</span>User Access Log</a>
+         <a href="#"><span class="fa fa-file-text-o"></span> Ganti Password</a>
        </li>
-       <li>
-         <a href="change-password.php"><span class="fa fa-file-text-o"></span> Ganti Password</a>
-       </li>
+       
      </ul>

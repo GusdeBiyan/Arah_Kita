@@ -82,7 +82,9 @@ if (isset($_POST["cari"])) {
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-
+                                <a href="cetak-data-pengelola.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
                                    
                                 </div>
                                 <div class="grid-body no-border">

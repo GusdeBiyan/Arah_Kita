@@ -72,8 +72,8 @@ if (isset($_POST["cari"])) {
                 </li>
             </ul>
             <div class="page-title"> <i class="icon-custom-left"></i>
-
                 <h3>Data User </h3>
+                
             </div>
 
             <div class="row">
@@ -82,6 +82,9 @@ if (isset($_POST["cari"])) {
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
+                                <a href="cetak-data-user.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
 
                                    
                                 </div>

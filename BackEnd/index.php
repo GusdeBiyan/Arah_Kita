@@ -73,7 +73,9 @@ if (isset($_POST["cari"])) {
 
             <div class="page-title">
                 <i class="icon-custom-left"></i>
-                <h3>Data Wisata </h3>
+                <h3>Data Wisata  </h3>
+                <a href="tambah-wisata.php" class="btn btn-primary " > Tambah Wisata</a>
+                
             </div>
 
             <div class="row">
@@ -82,8 +84,9 @@ if (isset($_POST["cari"])) {
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-                                    <a href="tambah-wisata.php" class="btn btn-primary btn-xs btn-mini">Tambah Wisata</a>
-                                    
+                                <a href="cetak-data-wisata.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">

@@ -36,9 +36,17 @@ if (isset($_POST["cari"])) {
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/leftbar.css" rel="stylesheet" type="text/css" />
+   
+    <link href="assets/css/cetak.css" rel="stylesheet" type="text/css" />
 </head>
-</body>
+    <div id="header-image">
+        <img  alt="" class="header-image " src="bg/cetak-logo.png">
+     </div>
+
+     <center><h1> <b> LAPORAN DATA WISATA </b></h1></center>
+    <hr>
+
+<body class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">

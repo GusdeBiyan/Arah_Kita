@@ -29,29 +29,33 @@ if (isset($_POST["cari"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-    <link href="assets/plugins/pace/pace-theme-flash.css" rel="stylesheet" type="text/css" media="screen" />
-    <link href="assets/plugins/boostrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/plugins/boostrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/animate.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/custom-icon-set.css" rel="stylesheet" type="text/css" />
-    <link href="assets/css/leftbar.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body class="">
+   
+    <link href="assets/css/cetak.css" rel="stylesheet" type="text/css" />
     
+    
+</head>
+<div id="header-image">
+        <img  alt="" class="header-image " src="bg/cetak-logo.png">
+     </div>
+
+     <center><h1> <b> LAPORAN DATA USER </b></h1></center>
+    <hr>
+
+    <body class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-
-                                   
-                                </div>
+                              
+                                    
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">

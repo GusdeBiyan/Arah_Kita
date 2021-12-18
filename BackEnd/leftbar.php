@@ -49,5 +49,12 @@
        <li>
          <a href="#"><span class="fa fa-file-text-o"></span> Ganti Password</a>
        </li>
-       
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+      
+
+       <li><a href="logout.php"><span class="fa fa-power-off"></span>&nbsp;&nbsp;Log Out</a></li>
      </ul>

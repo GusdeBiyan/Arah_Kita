@@ -23,15 +23,7 @@
       </div>
       <div class="pull-right">
 
-        <ul class="nav quick-section ">
-          <li class="quicklinks"> <a data-toggle="dropdown" class="dropdown-toggle  pull-right " href="#" id="user-options">
-              <div class="iconset top-settings-dark "></div>
-            </a>
-            <ul class="dropdown-menu  pull-right" role="menu" aria-labelledby="user-options">
-              <li class="divider"></li>
-              <li><a href="logout.php"><i class="fa fa-power-off"></i>&nbsp;&nbsp;Log Out</a></li>
-            </ul>
-          </li>
+        
 
         </ul>
       </div>

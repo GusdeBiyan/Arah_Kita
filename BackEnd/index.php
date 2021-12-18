@@ -77,6 +77,7 @@ if (isset($_POST["cari"])) {
                 <a href="tambah-wisata.php" class="btn btn-primary " > Tambah Wisata</a>
                 
             </div>
+          
 
             <div class="row">
                 <div class="col-md-12">

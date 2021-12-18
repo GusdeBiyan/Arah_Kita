@@ -13,7 +13,7 @@ require "functions.php";
 $id = $_GET["id"];
 
 // query data wisata berdasarkan id
-$data_pengelola = tampil("SELECT * FROM data_pengelola,wisata WHERE id_pengelola = $id")[0];
+$data_pengelola = tampil("SELECT * FROM data_pengelola WHERE id_pengelola = $id")[0];
 
 // cek apakah tombol submit sudah ditekan
 if (isset($_POST["submit"])) {
@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
     echo "
         <script>
         alert('Data gagal diubah');
-        document.location.href = 'data-pengelola.php';
+        
         </script>
         ";
   }
@@ -120,8 +120,9 @@ if (isset($_POST["submit"])) {
               <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_pengelola['no_hp'] ?>" class="form-control"> </td>
             </tr>
             <tr>
-              <td height="42"> Nama Wisata yang dkelola </td>
-              <td> <input type="text" name="nama_wisata" id="nama_wisata" required value="<?= $data_pengelola['nama_wisata'] ?>"readonly class="form-control"> </td>
+            <td height="42">Wisata yang dikelola</td>
+              <td><input type="text" name="nama_wisata" id="nama_wisata"required value="<?= $data_pengelola['id_wisata'] ?>"  readonly class="form-control" >
+                   
             </tr>
             <tr>
               <td>&nbsp;</td>

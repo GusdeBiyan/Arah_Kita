@@ -9,7 +9,8 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$data_pengelola = tampil("SELECT * FROM data_pengelola, wisata where data_pengelola.id_wisata=wisata.id_wisata order by id_pengelola desc");
+$data_pengelola = tampil("SELECT * FROM data_pengelola, wisata 
+                where data_pengelola.id_wisata=wisata.id_wisata order by id_pengelola desc");
 
 // jika tombol cari ditekan
 if (isset($_POST["cari"])) {

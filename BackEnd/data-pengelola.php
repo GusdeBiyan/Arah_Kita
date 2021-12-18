@@ -71,10 +71,14 @@ if (isset($_POST["cari"])) {
 
                 </li>
             </ul>
-            <div class="page-title"> <i class="icon-custom-left"></i>
+            <div class="page-title">
+                <i class="icon-custom-left"></i>
+                <h3>Data Pengelola  </h3> 
 
-                <h3>Data pengelola </h3>
+                <a href="tambah-pengelola.php" class="btn btn-primary " > Tambah Pengelola</a>
+                
             </div>
+
 
             <div class="row">
                 <div class="col-md-12">

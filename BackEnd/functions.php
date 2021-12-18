@@ -282,6 +282,31 @@ function ubah_wisatawan($data)
     return mysqli_affected_rows($koneksi);
 }
 
+//fungsi tambah pengelola
+function tambah_pengelola($data)
+{
+    global $koneksi;
+    // ambil data dari tiap elemen dalam form
+    // htmlspecialchars() supaya tidak disusupi script
+    $nama_wisata = htmlspecialchars($data["nama_wisata"]);
+    $nik_pengelola = htmlspecialchars($data["nik_pengelola"]);
+    $nama_pengelola = htmlspecialchars($data["nama_pengelola"]);
+    $email = htmlspecialchars($data["email"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
+    $password = htmlspecialchars($data["password"]);
+
+    
+
+    // query
+    $query = "INSERT INTO data_pengelola (id_pengelola,id_wisata,nik_pengelola,nama_pengelola,email,no_hp, password )  VALUES
+     ('', '$nama_wisata','$nik_pengelola','$nama_pengelola','$email','$no_hp', '$password')";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+
 //fungi hapus data pengelola
 function hapus_pengelola($id)
 {
@@ -296,9 +321,11 @@ function hapus_pengelola($id)
 function ubah_pengelola($data)
 {
     global $koneksi;
+
     $id = $data["id"];
-    $nama_pengelola = htmlspecialchars($data["nama_pengelola"]);
+    $nama_wisata = htmlspecialchars($data["nama_wisata"]);
     $nik_pengelola = htmlspecialchars($data["nik_pengelola"]);
+    $nama_pengelola = htmlspecialchars($data["nama_pengelola"]);
     $email = htmlspecialchars($data["email"]);
     $no_hp = htmlspecialchars($data["no_hp"]);
     $password = htmlspecialchars($data["password"]);
@@ -308,8 +335,9 @@ function ubah_pengelola($data)
 
     // query
     $query = "UPDATE data_pengelola SET
-        nama_pengelola = '$nama_pengelola',
+        
         nik_pengelola = '$nik_pengelola',
+        nama_pengelola = '$nama_pengelola',
         email = '$email' ,
         no_hp = '$no_hp',
         password = '$password'

@@ -132,7 +132,7 @@ if (isset($_POST["submit"])) {
             <tr>
             <tr>
               <td height="42"> Tanggal Lahir </td>
-              <td> <input type="text" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_user['tgl_lahir'] ?>" class="form-control"> </td>
+              <td> <input type="date" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_user['tgl_lahir'] ?>" > </td>
             </tr>
             <tr>
               <td height="42"> Alamat </td>

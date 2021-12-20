@@ -94,7 +94,7 @@ require "functions.php";
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-                                <a href="cetak-data-wisata.php" class="btn btn-danger btn-xs ">
+                                <a href="cetak-data-transaksi.php" class="btn btn-danger btn-xs ">
                                 cetak <i class="glyphicon glyphicon-print"></i>
                                 </a>
                                 <div class="grid-body no-border">

@@ -351,6 +351,16 @@ function ubah_pengelola($data)
     return mysqli_affected_rows($koneksi);
 }
 
+//fungsi hapus transaksi
+function hapus_transaksi($id)
+{
+    global $koneksi;
+
+
+    mysqli_query($koneksi, "DELETE FROM transaksi WHERE id_transaksi = $id");
+    return mysqli_affected_rows($koneksi);
+}
+
 // fungsi registrasi admin
 function registrasi($data)
 {

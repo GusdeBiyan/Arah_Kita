@@ -41,13 +41,13 @@
          <a href="data-pengelola.php"><span class="fa fa-users"></span> Data Pengelola Wisata </a>
        </li>
        <li>
-         <a href="manage-tickets.php"><span class="fa fa-ticket"></span> Riwayat Transaksi</a>
+         <a href="data-transaksi.php"><span class="fa fa-ticket"></span> Riwayat Transaksi</a>
        </li>
        <li>
          <a href="registrasi.php"><span class="fa fa-users"></span> Tambah Admin</a>
        </li>
        <li>
-         <a href="#"><span class="fa fa-file-text-o"></span> Ganti Password</a>
+         <a href="ganti-password.php"><span class="fa fa-file-text-o"></span> Ganti Password</a>
        </li>
        <br>
        <br>

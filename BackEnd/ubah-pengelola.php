@@ -119,10 +119,20 @@ if (isset($_POST["submit"])) {
               <td height="42"> No.HP </td>
               <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_pengelola['no_hp'] ?>" class="form-control"> </td>
             </tr>
-            <tr>
+            <tr> 
+              <?php
+              $id = $_GET["id"];
+                   $query= "SELECT * FROM data_pengelola
+                            INNER JOIN wisata ON data_pengelola.id_wisata=wisata.id_wisata
+                            where id_pengelola=$id
+                    " ;
+                    $sql= mysqli_query($koneksi,$query) or die (mysqli_error($koneksi));
+                    while ($data=mysqli_fetch_array($sql)) {
+                    ?>
             <td height="42">Wisata yang dikelola</td>
-              <td><input type="text" name="nama_wisata" id="nama_wisata"required value="<?= $data_pengelola['id_wisata'] ?>"  readonly class="form-control" >
-                   
+            <td><input type="text" name="nama_wisata" id="nama_wisata"required value="<?= $data['nama_wisata'] ?>"  readonly class="form-control" ></td>
+            <?php
+                                            } ?>
             </tr>
             <tr>
               <td>&nbsp;</td>

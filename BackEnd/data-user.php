@@ -9,12 +9,6 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$data_user = tampil("SELECT * FROM data_user ORDER BY id_user DESC");
-
-// jika tombol cari ditekan
-if (isset($_POST["cari"])) {
-    $data_user = cari($_POST["keyword"]);
-}
 
 ?>
 
@@ -82,12 +76,17 @@ if (isset($_POST["cari"])) {
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-                                <a href="cetak-data-user.php" class="btn btn-danger btn-xs ">
-                                cetak <i class="glyphicon glyphicon-print"></i>
-                                </a>
+                                <form class="form-inline" action="" method="post">
+                                        <div class="form-group">
+                                            <input type="text" name="cari" placeholder="cari">
+                                        </div>  
+                                        <div class="form-group">
+                                            <button type="submit" name="search" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </div> 
+                                    </form>
 
                                    
-                                </div>
+                                
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">
@@ -102,8 +101,21 @@ if (isset($_POST["cari"])) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $i = 1; ?>
-                                            <?php foreach ($data_user as $row) : ?>
+                                        <?php 
+                                                $wisata = mysqli_query($koneksi,"SELECT * FROM data_user ")or die (mysqli_error($koneksi));
+                                            
+                                                if (isset($_POST['search'])){
+                                                    $cari= $_POST["cari"];
+                                                    $wisata = mysqli_query($koneksi,"SELECT * FROM data_user
+                                                             WHERE nama_user LIKE '%$cari%'") or die (mysqli_error($koneksi));
+
+                                                }else{
+                                                    $wisata = mysqli_query($koneksi,"SELECT * FROM data_user ")or die (mysqli_error($koneksi));
+                                                }
+                                            
+                                            
+                                                while ($row=mysqli_fetch_array($wisata)){ 
+                                            ?>
                                                 <tr>
                                                     <td><?= $row["id_user"] ?></td>
                                                     <td><?= $row["nama_user"] ?></td>
@@ -119,9 +131,16 @@ if (isset($_POST["cari"])) {
                                                     </td>
                                                     </form>
                                                 </tr>
-                                                <?php $i++; ?>
-                                            <?php endforeach; ?>
+                                                <?php
+                                            } ?>
                                     </table>
+                                </div>
+                                <div class="grid-title no-border">
+                                <a href="cetak-data-user.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
+
+                                   
                                 </div>
                             </div>
                         </div>

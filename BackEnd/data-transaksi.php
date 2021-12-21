@@ -94,9 +94,13 @@ require "functions.php";
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-                                <a href="cetak-data-transaksi.php" class="btn btn-danger btn-xs ">
-                                cetak <i class="glyphicon glyphicon-print"></i>
-                                </a>
+                                <?php    
+                                if (isset($_POST['filter_tgl'])){
+                                                $tgl_awal=mysqli_real_escape_string($koneksi,$_POST['tgl_awal']);
+                                                $tgl_akhir=mysqli_real_escape_string($koneksi,$_POST['tgl_akhir']);
+                                        echo "Periode Tanggal " .$tgl_awal. " s/d " .$tgl_akhir ;
+                                }
+                                ?>                
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">
@@ -117,12 +121,22 @@ require "functions.php";
                                         <tbody>
                                            <?php
                                            $no=1;
-                                           $query= "SELECT * FROM transaksi
-                                                    INNER JOIN wisata ON transaksi.id_wisata=wisata.id_wisata
-                                                    INNER JOIN data_user ON transaksi.id_user=data_user.id_user
-                                           " ;
-                                            $sql= mysqli_query($koneksi,$query) or die (mysqli_error($koneksi));
-                                            while ($data=mysqli_fetch_array($sql)) {
+                                           
+                                           if (isset($_POST['filter_tgl'])){
+                                                $tgl_awal=mysqli_real_escape_string($koneksi,$_POST['tgl_awal']);
+                                                $tgl_akhir=mysqli_real_escape_string($koneksi,$_POST['tgl_akhir']);
+                                                $query=mysqli_query($koneksi, "SELECT * FROM transaksi
+                                                INNER JOIN wisata ON transaksi.id_wisata=wisata.id_wisata
+                                                INNER JOIN data_user ON transaksi.id_user=data_user.id_user WHERE tgl_transaksi BETWEEN '$tgl_awal' AND '$tgl_akhir'
+                                                ") or die (mysqli_error($koneksi));
+                                           }else{
+                                            $query=mysqli_query($koneksi, "SELECT * FROM transaksi
+                                            INNER JOIN wisata ON transaksi.id_wisata=wisata.id_wisata
+                                            INNER JOIN data_user ON transaksi.id_user=data_user.id_user 
+                                            ") or die (mysqli_error($koneksi));
+                                           }
+                                         
+                                            while ($data=mysqli_fetch_array($query)) {
                                            ?>
 
                                                 <tr>
@@ -147,6 +161,9 @@ require "functions.php";
                                            </tbody>    
                                     </table>
                                 </div>
+                                <a href="cetak-data-transaksi.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
                             </div>
                         </div>
                         <!-- akhir tabel -->

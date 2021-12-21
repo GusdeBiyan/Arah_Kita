@@ -9,12 +9,10 @@ if (isset($_SESSION["login"]) === false) {
 
 // tampilkan data
 require "functions.php";
-$wisata = tampil("SELECT * FROM wisata ORDER BY id_wisata DESC");
+
 
 // jika tombol cari ditekan
-if (isset($_POST["cari"])) {
-    $wisata = cari($_POST["keyword"]);
-}
+
 
 ?>
 
@@ -85,9 +83,14 @@ if (isset($_POST["cari"])) {
                         <div class="col-md-12">
                             <div class="grid simple ">
                                 <div class="grid-title no-border">
-                                <a href="cetak-data-wisata.php" class="btn btn-danger btn-xs ">
-                                cetak <i class="glyphicon glyphicon-print"></i>
-                                </a>
+                                    <form class="form-inline" action="" method="post">
+                                        <div class="form-group">
+                                            <input type="text" name="cari" placeholder="cari">
+                                        </div>  
+                                        <div class="form-group">
+                                            <button type="submit" name="search" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                        </div> 
+                                    </form>
                                 <div class="grid-body no-border">
 
                                     <table class="table table-hover no-more-tables">
@@ -102,8 +105,21 @@ if (isset($_POST["cari"])) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php $i = 1; ?>
-                                            <?php foreach ($wisata as $row) : ?>
+                                            <?php 
+                                                $wisata = mysqli_query($koneksi,"SELECT * FROM wisata ")or die (mysqli_error($koneksi));
+                                            
+                                                if (isset($_POST['search'])){
+                                                    $cari= $_POST["cari"];
+                                                    $wisata = mysqli_query($koneksi,"SELECT * FROM wisata
+                                                             WHERE nama_wisata LIKE '%$cari%'") or die (mysqli_error($koneksi));
+
+                                                }else{
+                                                    $wisata = mysqli_query($koneksi,"SELECT * FROM wisata ")or die (mysqli_error($koneksi));
+                                                }
+                                            
+                                            
+                                                while ($row=mysqli_fetch_array($wisata)){ 
+                                            ?>
                                                 <tr>
                                                     <td><?= $row["id_wisata"] ?></td>
                                                     <td><?= $row["nama_wisata"] ?></td>
@@ -119,10 +135,13 @@ if (isset($_POST["cari"])) {
                                                     </td>
                                                     </form>
                                                 </tr>
-                                                <?php $i++; ?>
-                                            <?php endforeach; ?>
+                                                <?php
+                                            } ?>
                                     </table>
                                 </div>
+                                <a href="cetak-data-wisata.php" class="btn btn-danger btn-xs ">
+                                cetak <i class="glyphicon glyphicon-print"></i>
+                                </a>
                             </div>
                         </div>
                         <!-- akhir tabel -->

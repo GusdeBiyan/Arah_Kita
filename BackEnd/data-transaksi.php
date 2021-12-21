@@ -78,8 +78,8 @@ require "functions.php";
                 <div class="row ">
                     <div class="col-md-12">
                         <form method="post" class="form-inline" >
-                            <input type="date" name="tgl_awal" class="form-control" >
-                            <input type="date" name="tgl_akhir" class="form-control " >   
+                            <input type="date" name="tgl_awal" required class="form-control" >
+                            <input type="date" name="tgl_akhir"  required class="form-control " >   
                             <button type= "submit" name="filter_tgl" class="btn btn-primary btn-xs "> Filter </button>     
                         </form>   
                      </div>

@@ -31,6 +31,9 @@
      <br>
 
      <ul>
+     <li>
+         <a href="dashboard.php"><span class="icon-custom-home"></span> Dashboard</a>
+       </li>
        <li>
          <a href="index.php"><span class="fa fa-map-marker">&nbsp;&nbsp;</span> Data Wisata</a>
        </li>
@@ -46,9 +49,7 @@
        <li>
          <a href="registrasi.php"><span class="fa fa-users"></span> Tambah Admin</a>
        </li>
-       <li>
-         <a href="ganti-password.php"><span class="fa fa-file-text-o"></span> Ganti Password</a>
-       </li>
+       
        <br>
        <br>
        <br>

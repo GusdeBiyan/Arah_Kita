@@ -22,7 +22,7 @@ if (isset($_COOKIE["x"]) && isset($_COOKIE["y"])) {
 
 
 if (isset($_SESSION["login"])) {
-    header("location: index.php");
+    header("location: dashboard.php");
     exit;
 }
 
@@ -53,7 +53,7 @@ if (isset($_POST["login"])) {
                 setcookie("y", hash("sha512", $row["username"]), time() + 300);
             }
 
-            header("location: index.php");
+            header("location: dashboard.php");
             exit;
         }
     }

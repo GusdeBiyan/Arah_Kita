@@ -103,10 +103,7 @@ if (isset($_POST["submit"])) {
               <td height="42"> Nama </td>
               <td> <input type="text" name="nama_user" id="nama_user" required value="<?= $data_user['nama_user'] ?>" class="form-control"> </td>
             </tr>
-            <tr>
-              <td height="42"> NIK </td>
-              <td> <input type="text" name="nik" id="nik" required value="<?= $data_user['nik'] ?>" class="form-control"> </td>
-            </tr>
+           
             <tr>
               <td height="42"> Email </td>
               <td> <input type="text" name="email" id="email" required value="<?= $data_user['email'] ?>" class="form-control"> </td>

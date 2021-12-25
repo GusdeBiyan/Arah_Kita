@@ -64,7 +64,7 @@ if (isset($_POST["cari"])) {
                                                 <th>ID</th>
                                                 <th>Nama </th>
                                                 <th>NIK </th>
-                                                <th>Email </th>
+                                                
                                                 <th>No.HP</th>
                                                 <th>Password</th>
                                                 <th>Jenis Kelamin</th>
@@ -81,7 +81,7 @@ if (isset($_POST["cari"])) {
                                                     <td><?= $row["id_user"] ?></td>
                                                     <td><?= $row["nama_user"] ?></td>
                                                     <td><?= $row["nik"] ?></td>
-                                                    <td><?= $row["email"] ?></td>
+                                                   
                                                     <td><?= $row["no_hp"] ?></td>
                                                     <td><?= $row["password"] ?></td>
                                                     <td><?= $row["jenis_kelamin"] ?></td>

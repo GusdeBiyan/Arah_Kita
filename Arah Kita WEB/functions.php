@@ -2,9 +2,9 @@
 
 // koneksi ke database
 $server = "localhost";
-$username = "root";
-$password = "";
-$db = "project";
+$username = "u1694897_d_reg_2";
+$password = "jtipolije";
+$db = "u1694897_d_reg_2_db";
 
 $koneksi = mysqli_connect($server, $username, $password, $db);
 

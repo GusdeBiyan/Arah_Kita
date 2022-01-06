@@ -131,6 +131,9 @@ function ubah($data)
     $kategori = htmlspecialchars($data["kategori"]);
     $deskripsi = htmlspecialchars($data["deskripsi"]);
     $harga_tiket = htmlspecialchars($data["harga_tiket"]);
+    $jumlah_kuota = htmlspecialchars($data["jumlah_kuota"]);
+    $no_rekening = htmlspecialchars($data["no_rekening"]);
+    $no_hp = htmlspecialchars($data["no_hp"]);
     $gambarLama = htmlspecialchars($data["gambarLama"]);
 
     // cek apakah users pilih gambar baru
@@ -154,6 +157,9 @@ function ubah($data)
         kategori = '$kategori' ,
         deskripsi = '$deskripsi',
         harga_tiket = '$harga_tiket',
+        jumlah_kuota ='$jumlah_kuota',
+        no_rekening = '$no_rekening',
+        no_hp = '$no_hp',
         gambar = '$gambar'
             WHERE id_wisata = $id
         ";
@@ -241,6 +247,7 @@ function hapus_wisatawan($id)
 
     mysqli_query($koneksi, "DELETE FROM data_user WHERE id_user = $id");
     return mysqli_affected_rows($koneksi);
+
 }
 
 // fungsi ubah wisatawan
@@ -355,6 +362,9 @@ function ubah_pengelola($data)
     return mysqli_affected_rows($koneksi);
 }
 
+
+
+
 //fungsi hapus transaksi
 function hapus_transaksi($id)
 {
@@ -363,7 +373,33 @@ function hapus_transaksi($id)
 
     mysqli_query($koneksi, "DELETE FROM transaksi WHERE id_transaksi = $id");
     return mysqli_affected_rows($koneksi);
+
+}//fungsi ubah transaksi
+function ubah_transaksi($data)
+{
+    global $koneksi;
+
+    $id = $data["id"];
+  
+    $status = htmlspecialchars($data["status"]);
+    
+
+    // query
+    $query = "UPDATE transaksi SET
+        
+        status = '$status',
+        
+
+            WHERE id_transaksi = $id
+        ";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+    
 }
+
+
 
 // fungsi registrasi admin
 function registrasi($data)

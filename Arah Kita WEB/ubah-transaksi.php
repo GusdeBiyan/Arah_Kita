@@ -13,31 +13,24 @@ require "functions.php";
 $id = $_GET["id"];
 
 // query data wisata berdasarkan id
-$wisata = tampil("SELECT * FROM wisata WHERE id_wisata = $id")[0];
+$transaksi = tampil("SELECT * FROM transaksi WHERE id_transaksi = $id")[0];
 
 // cek apakah tombol submit sudah ditekan
 if (isset($_POST["submit"])) {
 
   // cek apakah data berhasil diubah
-  if (ubah($_POST) > 0) {
+  if (ubah_transaksi($_POST) > 0) {
     echo "
         <script>
         alert('Data berhasil diubah');
-        document.location.href = 'index.php';
-        </script>
-        ";
-  } else if (ubah($_POST) == 0) {
-    echo "
-        <script>
-        alert('Data tidak diubah');
-        document.location.href = 'index.php';
+        document.location.href = 'data-transaksi.php';
         </script>
         ";
   } else {
     echo "
         <script>
         alert('Data gagal diubah');
-        document.location.href = 'index.php';
+        
         </script>
         ";
   }
@@ -94,70 +87,30 @@ if (isset($_POST["submit"])) {
     <div class="content">
       <div class="page-title">
 
-        <h3> <?= $wisata['nama_wisata'] ?>'s Profile</h3>
+      
 
         <form action="" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="gambarLama" value="<?= $wisata['gambar'] ?>">
+         
 
           <table width="100%" border="0">
 
             <tr>
-              <td height="42">ID </td>
-              <td><input type="text" name="id" value="<?= $wisata['id_wisata'] ?>" class="form-control" readonly></td>
-
-            </tr>
-            <tr>
-              <td height="42"> Nama Wisata </td>
-              <td> <input type="text" name="nama_wisata" id="nama_wisata" required value="<?= $wisata['nama_wisata'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td height="42">Kategori </td>
-              <td><select name="kategori">
-                  <option value="<?= $wisata['kategori'] ?>"><?= $wisata['kategori'] ?> </option>
-                  <option value="Pantai">Pantai</option>
-                  <option value="Gunung">Gunung</option>
-                  <option value="Taman Nasional">Taman Nasional</option>
-                  <option value="Lainya">Lainnya</option>
+              <td height="42"> Status</td>
+              <td><select name="status">
+                  <option value="<?= $transaksi['status'] ?>"><?= $transaksi['status'] ?> </option>
+                  <option value="belum dibayar">belum dibayar</option>
+                  <option value="sudah dibayar">sudah dibayar</option>
+                 
                 </select>
               </td>
-
-            <tr>
-              <td height="42"> Deskripsi </td>
-              <td> <input type="text" name="deskripsi" id="deskripsi" required value="<?= $wisata['deskripsi'] ?>" class="form-control"> </td>
             </tr>
-            
-
-            <tr>
-              <td height="42"> Lokasi </td>
-              <td> <input type="text" name="lokasi" id="lokasi" required value="<?= $wisata['lokasi'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td height="42"> Harga Tiket </td>
-              <td> <input type="text" name="harga_tiket" id="Harga_tiket" required value="<?= $wisata['harga_tiket'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td height="42"> Jumlah Kuota </td>
-              <td> <input type="text" name="jumlah_kuota" id="jumlah_kuota" required value="<?= $wisata['jumlah_kuota'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td height="42"> NO Rekening </td>
-              <td> <input type="text" name="no_rekening" id="no_rekening" required value="<?= $wisata['no_rekening'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td height="42"> No HP </td>
-              <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $wisata['no_hp'] ?>" class="form-control"> </td>
-            </tr>
-            <tr>
-              <td>Gambar &nbsp;&nbsp; </td>
-              <td> <img src="img/wisata/<?= $wisata['gambar']; ?>" alt="gambar wisata" width="110" height="70">
-                <input type="file" name="gambar" id="gambar" value="<?= $wisata['gambar'] ?>">
-              <td>
-
+           
+           
             </tr>
             <tr>
               <td>&nbsp;</td>
               <td height="42">
-                <button type="submit" class="btn btn-primary" name="submit">Ubah data wisata</button>
+                <button type="submit" class="btn btn-primary" name="submit">Ubah data Transaksi</button>
             </tr>
             <tr>
               <td>&nbsp;</td>

@@ -149,7 +149,7 @@ require "functions.php";
                                                     <td><?= $data["status"] ?></td>
                                                     <td>
                                                         <form name="abc" action="" method="post">
-                                                           
+                                                        <a class="btn btn-primary btn-xs btn-mini" href="ubah-transaksi.php?id=<?= $data['id_transaksi'] ?>" role="button">Edit</a>
                                                             <a class="btn btn-danger btn-xs btn-mini" href="hapus-transaksi.php?id=<?= $data['id_transaksi'] ?>" role="button" onclick="
                                                             return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                                                         </form>

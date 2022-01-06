@@ -110,7 +110,7 @@ if (isset($_POST["submit"])) {
             <tr>
               <td>&nbsp;</td>
               <td height="42">
-                <button type="submit" class="btn btn-primary" name="submit">Ubah data Transaksi</button>
+                <button type="submit" class="btn btn-primary" name="submit">Ubah Status Transaksi</button>
             </tr>
             <tr>
               <td>&nbsp;</td>

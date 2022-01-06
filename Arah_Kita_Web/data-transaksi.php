@@ -106,7 +106,7 @@ require "functions.php";
                                     <table class="table table-hover no-more-tables">
                                     <thead>
                                             <tr>
-                                                <th>No</th>
+                                                <th>No transaksi</th>
                                                 <th>Tanggal Transaksi</th>
                                                 <th>Nama Pembeli</th>
                                                 <th>Nama Wisata </th>
@@ -140,7 +140,7 @@ require "functions.php";
                                            ?>
 
                                                 <tr>
-                                                    <td><?= $no++ ?></td>
+                                                    <td><?= $data["id_transaksi"] ?></td>
                                                     <td><?= $data["tgl_transaksi"] ?></td>
                                                     <td><?= $data["nama_user"] ?></td>
                                                     <td><?= $data["nama_wisata"] ?></td>

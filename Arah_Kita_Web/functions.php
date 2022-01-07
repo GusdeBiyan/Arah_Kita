@@ -378,16 +378,15 @@ function hapus_transaksi($id)
 function ubah_transaksi($data)
 {
     global $koneksi;
-
-    $id = $data["id"];
-  
+    $id = $_GET["id"];
+   
     $status = htmlspecialchars($data["status"]);
     
 
     // query
     $query = "UPDATE transaksi SET
         
-        status = '$status',
+        status = '$status'
         
 
             WHERE id_transaksi = $id

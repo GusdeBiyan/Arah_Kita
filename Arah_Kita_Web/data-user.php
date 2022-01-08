@@ -124,7 +124,7 @@ require "functions.php";
                                                     <td><img src="img/user/<?= $row["gambar"] ?>" width="110" height="70">
                                                     <td>
                                                         <form name="abc" action="" method="post">
-                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-user.php?id=<?= $row['id_user'] ?>" role="button">Edit</a>
+                                                            <a class="btn btn-primary btn-xs btn-mini" href="ubah-user.php?id=<?= $row['id_user'] ?>" role="button">View</a>
                                                             <a class="btn btn-danger btn-xs btn-mini" href="hapus-user.php?id=<?= $row['id_user'] ?>" role="button" onclick="
                                                             return confirm ('Anda yakin ingin menghapus?\nData akan dihapus secara permanen');">Hapus</a>
                                                         </form>

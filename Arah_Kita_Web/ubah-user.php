@@ -101,56 +101,38 @@ if (isset($_POST["submit"])) {
             </tr>
             <tr>
               <td height="42"> Nama </td>
-              <td> <input type="text" name="nama_user" id="nama_user" required value="<?= $data_user['nama_user'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="nama_user" id="nama_user" required value="<?= $data_user['nama_user'] ?>" class="form-control" readonly> </td>
             </tr>
            
             <tr>
               <td height="42"> Email </td>
-              <td> <input type="text" name="email" id="email" required value="<?= $data_user['email'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="email" id="email" required value="<?= $data_user['email'] ?>" class="form-control" readonly> </td>
             </tr>
             <tr>
               <td height="42"> Password </td>
-              <td> <input type="text" name="password" id="password" required value="<?= $data_user['password'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="password" id="password" required value="<?= $data_user['password'] ?>" class="form-control" readonly> </td>
             </tr>
             <tr>
               <td height="42"> No.HP </td>
-              <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_user['no_hp'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="no_hp" id="no_hp" required value="<?= $data_user['no_hp'] ?>" class="form-control" readonly> </td>
             </tr>
             <tr>
-              <td height="42">Jenis Kelamin </td>
-              <td><select name="jenis_kelamin">
-                  <option value="<?= $data_user['jenis_kelamin'] ?>"><?= $data_user['jenis_kelamin'] ?> </option>
-                  <option value="Pria">Pria</option>
-                  <option value="Perempuan">Perempuan</option>
-
-                </select>
-              </td>
+            <td height="42"> Jenis Kelamin </td>
+              <td> <input type="text" name="jenis_kelamin" id="jenis_kelamin" required value="<?= $data_user['jenis_kelamin'] ?>" class="form-control" readonly> </td>
+           
 
             <tr>
             <tr>
               <td height="42"> Tanggal Lahir </td>
-              <td> <input type="date" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_user['tgl_lahir'] ?>" > </td>
+              <td> <input type="text" name="tgl_lahir" id="tgl_lahir" required value="<?= $data_user['tgl_lahir'] ?>"  class="form-control" readonly > </td>
             </tr>
             <tr>
               <td height="42"> Alamat </td>
-              <td> <input type="text" name="alamat" id="alamat" required value="<?= $data_user['alamat'] ?>" class="form-control"> </td>
+              <td> <input type="text" name="alamat" id="alamat" required value="<?= $data_user['alamat'] ?>" class="form-control" readonly> </td>
             </tr>
-            <tr>
-              <td>User Image &nbsp;&nbsp; </td>
-              <td> <img src="img/user/<?= $data_user['gambar']; ?>" alt="gambar user" width="110" height="70">
-                <input type="file" name="gambar" id="gambar" value="<?= $data_user['gambar'] ?>">
-              <td>
-
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td height="42">
-                <button type="submit" class="btn btn-primary" name="submit">Ubah data User</button>
-            </tr>
-            <tr>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-            </tr>
+           
+           
+           
           </table>
         </form>
 
